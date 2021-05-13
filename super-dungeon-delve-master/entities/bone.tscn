@@ -30,8 +30,8 @@ collision_layer = 4
 script = ExtResource( 1 )
 
 [node name="bone" type="Sprite" parent="."]
-light_mask = 0
-position = Vector2( 2.32831e-010, 1.86265e-009 )
+light_mask = 3
+position = Vector2( 2.32831e-10, 1.86265e-09 )
 z_index = 7
 texture = ExtResource( 2 )
 
