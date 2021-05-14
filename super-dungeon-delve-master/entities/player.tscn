@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://entities/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/player/knight_m_idle_anim_f0.png" type="Texture" id=2]
@@ -14,9 +14,20 @@
 [ext_resource path="res://assets/sfx/footstep.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/sfx/grunts.wav" type="AudioStream" id=13]
 [ext_resource path="res://assets/sfx/swipe.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sprites/player/knight_up_2.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/player/knight_up_1.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/player/knight_down.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/player/knight_down_1.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/player/knight_down_2.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/player/knight_up.png" type="Texture" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 20 ), ExtResource( 16 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "idle",
