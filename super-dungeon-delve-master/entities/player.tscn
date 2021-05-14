@@ -42,6 +42,11 @@ animations = [ {
 "loop": true,
 "name": "hit",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -61,7 +66,8 @@ light_mask = 0
 position = Vector2( 8, 8 )
 z_index = 10
 frames = SubResource( 1 )
-animation = "idle"
+animation = "down"
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
