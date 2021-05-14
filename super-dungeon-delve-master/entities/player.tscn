@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://entities/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/player/knight_m_idle_anim_f0.png" type="Texture" id=2]
@@ -14,9 +14,20 @@
 [ext_resource path="res://assets/sfx/footstep.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/sfx/grunts.wav" type="AudioStream" id=13]
 [ext_resource path="res://assets/sfx/swipe.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sprites/player/knight_up_2.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/player/knight_up_1.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/player/knight_down.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/player/knight_down_1.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/player/knight_down_2.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/player/knight_up.png" type="Texture" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 20 ), ExtResource( 16 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "idle",
@@ -31,9 +42,14 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 4.44124
 height = 3.45922
 
@@ -50,7 +66,7 @@ light_mask = 0
 position = Vector2( 8, 8 )
 z_index = 10
 frames = SubResource( 1 )
-animation = "idle"
+animation = "up"
 frame = 1
 playing = true
 
@@ -87,7 +103,7 @@ modulate = Color( 0.298039, 0.768627, 0.0588235, 1 )
 light_mask = 0
 position = Vector2( 7.92289, 15.694 )
 z_index = 12
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="SfxFootstep" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 0, 1 )

@@ -87,8 +87,15 @@ func _get_direction() -> Vector2:
 	if new_dir.x != 0 or new_dir.y != 0:
 		_last_dir = new_dir	
 		
-	if new_dir.x > 0 or new_dir.y > 0 or new_dir.x < 0 or new_dir.y < 0:
+	if new_dir.x > 0 or new_dir.x < 0:
 		if _recoil_time < 0.01: $Sprite.play("walk")
+		
+	elif new_dir.y < 0:
+		if _recoil_time < 0.01: $Sprite.play("up")
+	
+	elif new_dir.y > 0:
+		if _recoil_time < 0.01: $Sprite.play("down")
+	
 	else:
 		$Sprite.play("idle")
 				
