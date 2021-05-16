@@ -1,3 +1,5 @@
 # Videojuego_UX
 
-* Agrege el efecto para mostrar solo lo que el personaje ve, pero el alcance es mayor a la luz visible.
+* Ya no se muestran personajes que no estén en la luz, pero el alcance es mayor a la luz visible
+* Se agrego sprites para los movimientos al caminar arriba y abajo
+
