@@ -41,6 +41,7 @@ config/icon="res://assets/icon.png"
 [autoload]
 
 globals="*res://lib/globals.gd"
+TRANSITION="*res://core/transition.tscn"
 
 [debug]
 

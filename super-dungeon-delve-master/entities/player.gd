@@ -160,7 +160,8 @@ func take_damage(collision_dir: Vector2, damage: float, factor: float):
 		
 	
 	if health <= 0:
-		get_tree().change_scene("res://core/game-over.tscn")	
+		TRANSITION.change_scene_loc("res://core/game-over.tscn")
+		#get_tree().change_scene("res://core/game-over.tscn")	
 
 	_recoil_dir = collision_dir
 	_recoil_time = 0.2
