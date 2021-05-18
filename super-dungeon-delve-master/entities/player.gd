@@ -155,6 +155,10 @@ func take_damage(collision_dir: Vector2, damage: float, factor: float):
 
 	var actual_damage = floor( (damage + (randi() % 5)) * factor)
 	health -= actual_damage
+	if health < 20:
+		$"/root/Main/CanvasModulate".set_color(Color(1,0,0))
+		
+	
 	if health <= 0:
 		get_tree().change_scene("res://core/game-over.tscn")	
 
@@ -170,6 +174,9 @@ func take_damage(collision_dir: Vector2, damage: float, factor: float):
 #
 func heal(ammount: int):
 	health = min(health + ammount, 100)
+	if health > 20:
+		$"/root/Main/CanvasModulate".set_color(Color(0.57,0.57,0.57))
+		
 	$"/root/Main/HUD/HealthBar".value = health	
 	$"/root/Main/HUD/HealthBar".theme
 	$"/root/Main/HUD/HealthBar/AnimationPlayer".play("blink")

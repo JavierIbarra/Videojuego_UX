@@ -14,7 +14,7 @@ func _ready():
 	
 func _process(delta):
 	$next.visible = finished
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_focus_next"):
 		load_dialog()
 	
 func load_dialog():
