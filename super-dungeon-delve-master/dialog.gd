@@ -1,11 +1,12 @@
 extends Control
 
 
-var dialog = ['Hola soy Joe Frames','Soy el tabernero del pueblo']
+var dialog ={2:['Hola soy Joe Framesl el tabernero del pueblo'], 5:['Hola soy Joe Framesl el tabernero del pueblo N2'], 7:['Hola soy Joe Framesl el tabernero del pueblo N3']}
 
 var dialog_index = 0
 var finished = false
 var text_speed = 0.04
+
 
 func _ready():
 	$RichTextLabel.bbcode_text = ''
@@ -13,15 +14,15 @@ func _ready():
 	
 func _process(delta):
 	$next.visible = finished
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_focus_next"):
 		load_dialog()
 	
 func load_dialog():
-	if dialog_index < dialog.size():
+	if dialog_index < dialog[globals.depth].size():
 		finished = false
-		$RichTextLabel.bbcode_text = dialog[dialog_index]
+		$RichTextLabel.bbcode_text = dialog[globals.depth][dialog_index]
 		$RichTextLabel.percent_visible = 0
-		var tween_duration = text_speed * dialog[dialog_index].length()
+		var tween_duration = text_speed * dialog[globals.depth][dialog_index].length()
 		$Tween.interpolate_property(
 			$RichTextLabel, "percent_visible", 0, 1, tween_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
 		)
