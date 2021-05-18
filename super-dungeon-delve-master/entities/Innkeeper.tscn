@@ -20,10 +20,16 @@ script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 light_mask = 3
+position = Vector2( 0.445953, 0.408791 )
+scale = Vector2( 0.925674, 0.925674 )
 frames = SubResource( 1 )
 animation = "static"
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0.297272, 0.297302 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, 1.78381 )

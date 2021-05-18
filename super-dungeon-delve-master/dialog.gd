@@ -19,6 +19,7 @@ func _process(delta):
 	
 func load_dialog():
 	if dialog_index < dialog[globals.depth].size():
+		get_tree().paused = true
 		finished = false
 		$RichTextLabel.bbcode_text = dialog[globals.depth][dialog_index]
 		$RichTextLabel.percent_visible = 0
@@ -29,6 +30,7 @@ func load_dialog():
 		$Tween.start()
 	else:
 		queue_free()
+		get_tree().paused = false
 	dialog_index += 1
 
 func _on_Tween_tween_completed(object, key):
