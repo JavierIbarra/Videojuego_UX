@@ -221,3 +221,6 @@ stream = ExtResource( 8 )
 volume_db = -2.017
 pitch_scale = 0.45
 bus = "Reverb"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.576471, 0.576471, 0.576471, 1 )

@@ -10,7 +10,7 @@ extents = Vector2( 4.04769, 4.20251 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-light_mask = 0
+light_mask = 3
 position = Vector2( 8, 8 )
 texture = ExtResource( 2 )
 

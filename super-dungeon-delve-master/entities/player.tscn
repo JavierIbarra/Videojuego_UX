@@ -33,15 +33,15 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "hit",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "walk",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "hit",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
@@ -66,7 +66,7 @@ light_mask = 0
 position = Vector2( 8, 8 )
 z_index = 10
 frames = SubResource( 1 )
-animation = "up"
+animation = "down"
 frame = 1
 playing = true
 
@@ -126,6 +126,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 4.7368, 7.19185 )
 shape = SubResource( 3 )
+
+[node name="Sombra" type="Light2D" parent="."]
+texture = ExtResource( 11 )
+mode = 3
+range_item_cull_mask = 2
+shadow_enabled = true
 [connection signal="frame_changed" from="Sprite" to="." method="_on_Sprite_frame_changed"]
 [connection signal="timeout" from="Light2D/LightTimer" to="." method="_on_LightTimer_timeout"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
