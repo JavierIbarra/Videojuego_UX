@@ -1,7 +1,7 @@
 extends Control
 
 
-var dialog ={2:['Hola soy Joe Framesl el tabernero del pueblo'], 5:['Hola soy Joe Framesl el tabernero del pueblo N2'], 7:['Hola soy Joe Framesl el tabernero del pueblo N3']}
+var dialog ={1:['Hola soy Joe Framesl el tabernero del pueblo'], 5:['Hola soy Joe Framesl el tabernero del pueblo N2'], 7:['Hola soy Joe Framesl el tabernero del pueblo N3']}
 
 var dialog_index = 0
 var finished = false
@@ -14,7 +14,7 @@ func _ready():
 	
 func _process(delta):
 	$next.visible = finished
-	if Input.is_action_just_pressed("ui_focus_next"):
+	if Input.is_action_just_pressed("ui_accept"):
 		load_dialog()
 	
 func load_dialog():

@@ -75,7 +75,7 @@ func start_level():
 	exit.position.y = exit_cell.y * globals.GRID_SIZE
 	add_child(exit)
 	
-	if globals.depth == 2 or globals.depth == 5 or globals.depth == 7:
+	if globals.depth == 1 or globals.depth == 5 or globals.depth == 7:
 		var innkeeper = SCENE_INNKEEPER.instance()
 		
 		var innkeeper_cell = globals.map.get_random_floor_cell(exit_room["left"], exit_room["top"], exit_room["width"], exit_room["height"])
@@ -120,7 +120,8 @@ func start_level():
 						monster.factor = 3				
 				
 				# Place monster in game (inside Main node)
-				add_child(monster)
+				if start_room != room:  
+					add_child(monster)
 				
 #
 # Helper to move to next level
