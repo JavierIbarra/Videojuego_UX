@@ -1,5 +1,6 @@
 # Videojuego_UX
 
-* Ya no se muestran los cofres, posiciones y monstruos que están en la oscuridad, pero el alcance de vision es mayor a la luz visible
-* Se agrego sprites para los movimientos al caminar arriba y abajo
-
+* Cofre, posiciones y monstruos permanecen ocultos en las sombras
+* Implementación de un CanvasModulate que genera una sombra que cubre todo el mapa dando un tono más oscuro al juego
+* Implementación de sprites para los movimientos al caminar hacia arriba y abajo
+* Integración de tabernero en los niveles 2, 5 y 7. Se ubica siempre a lado de la escalera
