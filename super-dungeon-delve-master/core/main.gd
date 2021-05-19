@@ -6,10 +6,13 @@ const SCENE_MONSTER = preload("res://entities/monster.tscn")
 const SCENE_EXIT = preload("res://entities/exit.tscn")
 const SCENE_PLAYER = preload("res://entities/player.tscn")
 const SCENE_MAP = preload("res://core/map.tscn")
+const SCENE_INNKEEPER = preload("res://entities/Innkeeper.tscn")
+const SCENE_DIALOG = preload("res://core/dialog.tscn")
+
 
 func _ready():
 	randomize()
-
+	
 	# Start game, add a player and reset globals
 	globals.player = SCENE_PLAYER.instance()
 	globals.depth = 1
@@ -72,6 +75,14 @@ func start_level():
 	exit.position.y = exit_cell.y * globals.GRID_SIZE
 	add_child(exit)
 	
+	if globals.depth == 2 or globals.depth == 5 or globals.depth == 7:
+		var innkeeper = SCENE_INNKEEPER.instance()
+		
+		var innkeeper_cell = globals.map.get_random_floor_cell(exit_room["left"], exit_room["top"], exit_room["width"], exit_room["height"])
+		innkeeper.position.x = innkeeper_cell.x * globals.GRID_SIZE
+		innkeeper.position.y = innkeeper_cell.y * globals.GRID_SIZE
+		add_child(innkeeper)
+	
 	# Add monsters to each room (should this be move to map.gd I don't know)
 	for room in globals.map.all_rooms:
 		# Spawn loop is factored on room size
@@ -109,7 +120,8 @@ func start_level():
 						monster.factor = 3				
 				
 				# Place monster in game (inside Main node)
-				add_child(monster)
+				if start_room != room:  
+					add_child(monster)
 				
 #
 # Helper to move to next level
@@ -119,4 +131,8 @@ func next_level():
 	globals.depth += 1
 	# IMPORTANT! Use call_deferred to prevent "flushing queries" errors/warnings
 	call_deferred("start_level")
+	
+func new_load():
+	var dialogo = SCENE_DIALOG.instance()
+	$"HUD".add_child(dialogo)
 	
