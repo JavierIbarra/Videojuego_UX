@@ -1,11 +1,14 @@
 extends Control
 
 
-var dialog ={2:['Hola soy Joe Framesl el tabernero del pueblo'], 5:['Hola soy Joe Framesl el tabernero del pueblo N2'], 7:['Hola soy Joe Framesl el tabernero del pueblo N3']}
+var dialog ={
+2:['Joe Frames: Gracias por acompañarme a buscar a mi hija. Llevo investigando estas mazmorras desde hace ya un par de días. Todo lo que sé es que alguien del pueblo la vio dirigiéndose a esta cárcel en la noche. Como si estuviera poseída. Todo lo que he podido encontrar son estas huellas.', 'Suspira…'],
+5:['Joe Frames: Acabo de encontrar su zapato, acá abandonado. Ella es lo único que me queda, si algo le pasara no me lo perdonaría jamás.', 'Le tiemblan los brazos, Respira…',' Joe Frames: Contar con tu apoyo me calma, viejo amigo. Sigamos adelante!!!!'], 
+7:['Joe Frames: Estas mazmorras parecen no tener fin, mientras más descendemos más monstruos aparecen. Es como si nos estuviésemos acercando a su nido, si es que eso tiene algún sentido.', '????: AaaaaaaaaaaH!!!', 'Joe Frames: Esa es mi hija!!!, juro que si alguien le puso un dedo encima, haré que lamente haber nacido']}
 
 var dialog_index = 0
 var finished = false
-var text_speed = 0.04
+var text_speed = 0.03
 
 
 func _ready():

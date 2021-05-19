@@ -38,14 +38,14 @@ animations = [ {
 "name": "walk",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "hit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "down",
 "speed": 5.0
 } ]
 
@@ -89,7 +89,7 @@ light_mask = 0
 position = Vector2( 8, 16 )
 texture = ExtResource( 11 )
 texture_scale = 0.2
-color = Color( 0.960784, 0.933333, 0.270588, 1 )
+color = Color( 0.960784, 0.933333, 0.270588, 0.588235 )
 shadow_enabled = true
 
 [node name="LightTimer" type="Timer" parent="Light2D"]
