@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://core/start-menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/splash/title.png" type="Texture" id=2]
@@ -9,6 +9,23 @@
 [ext_resource path="res://assets/misc/potion.png" type="Texture" id=7]
 [ext_resource path="res://assets/misc/chest.png" type="Texture" id=8]
 [ext_resource path="res://assets/music/title.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/cinematic/tavern/Tabern_background-taberner.png" type="Texture" id=10]
+[ext_resource path="res://background.png" type="Texture" id=11]
+[ext_resource path="res://assets/cinematic/tavern/knight_beer.png" type="Texture" id=12]
+[ext_resource path="res://assets/cinematic/tavern/Help.png" type="Texture" id=13]
+[ext_resource path="res://assets/cinematic/tavern/Table.png" type="Texture" id=14]
+[ext_resource path="res://assets/cinematic/tavern/white.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/player/knight_m_idle_anim_f3.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/monsters/skelet_run_anim_f0.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/monsters/orc_warrior_run_anim_f0.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/monsters/orc_warrior_run_anim_f1.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/monsters/skelet_run_anim_f2.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/monsters/skelet_run_anim_f3.png" type="Texture" id=21]
+[ext_resource path="res://assets/cinematic/Town/Town.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/player/weapon_red_gem_sword.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/player/knight_down_1.png" type="Texture" id=24]
+[ext_resource path="res://assets/cinematic/tavern/Picture1.png" type="Texture" id=25]
+[ext_resource path="res://assets/cinematic/Dungeon/Dungeon_entrance.png" type="Texture" id=26]
 
 [sub_resource type="Animation" id=1]
 resource_name = "selected"
@@ -38,6 +55,469 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.972549, 0.364706, 0, 1 ) ]
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "Dungeon"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cinematic/Dungeon_entrance:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cinematic/Dungeon_entrance:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 692.897, 557.158 ), Vector2( 323.754, -193.446 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cinematic/Dungeon_entrance:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.22768, 6.22768 ), Vector2( 15, 15 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Pueblo"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cinematic/Town:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1257.41, 617.275 ), Vector2( 692.52, 559.319 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cinematic/Town:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cinematic/background:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 10.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cinematic/Tabern_background-taberner:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10, 10 ), Vector2( 15, 15 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cinematic/Table:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 7.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 778.37, 782.92 ), Vector2( 460.646, 880.103 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cinematic/Table2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 7.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1579.18, 784.133 ), Vector2( 1878.98, 868.878 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Cinematic/Table2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 7.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10, 10 ), Vector2( 15, 15 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Cinematic/Table:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 7.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10, 10 ), Vector2( 15, 15 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Cinematic/knight_beer:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 7.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1052.3, 577.274 ), Vector2( 972.206, 492.633 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Cinematic/knight_beer:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 7.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10, 10 ), Vector2( 15, 15 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Cinematic/Help:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 8.65, 8.7, 8.75, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 2,
+"values": [ false, true, false, true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Cinematic/white:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 8.6, 8.65, 8.7, 8.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Cinematic/Tabern_background-taberner:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Cinematic/knight_beer:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Cinematic/Table:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Cinematic/Table2:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Cinematic/Dungeon_entrance:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 6.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cinematic/Town:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 692.52, 556.94 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cinematic/white:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.05, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cinematic/Town2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.2, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Cinematic/Town:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 1.05, 1.1, 1.15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Cinematic/Town2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 693.863, 559.642 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Cinematic/Town2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.23975, 6.23975 ), Vector2( 9, 9 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Cinematic/Town2/knight_m_idle_anim_f3:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1.2, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Cinematic/Town2/weapon_red_gem_sword:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 1.2, 4.4, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Cinematic/Town2/weapon_red_gem_sword:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 4.4, 4.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 180.0, 540.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Cinematic/Town2/orc_warrior_run_anim_f0:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 1.2, 5.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Cinematic/Town2/skelet_run_anim_f4:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 1.2, 5.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Cinematic/Town2/orc_warrior_run_anim_f1:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 1.2, 5.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Cinematic/Town2/skelet_run_anim_f2:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 1.2, 5.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Cinematic/Town2/orc_warrior_run_anim_f2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 1.2, 5.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Dungeon"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Pueblo"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "Taverna"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "knight_town"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=13]
+states/Dungeon/node = SubResource( 6 )
+states/Dungeon/position = Vector2( 858, 99 )
+states/Pueblo/node = SubResource( 7 )
+states/Pueblo/position = Vector2( 428, 95 )
+states/Taverna/node = SubResource( 8 )
+states/Taverna/position = Vector2( 182, 91 )
+states/knight_town/node = SubResource( 9 )
+states/knight_town/position = Vector2( 628, 89 )
+transitions = [ "Taverna", "Pueblo", SubResource( 10 ), "Pueblo", "knight_town", SubResource( 11 ), "knight_town", "Dungeon", SubResource( 12 ) ]
+start_node = "Taverna"
+end_node = "Dungeon"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=14]
+
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -47,10 +527,11 @@ __meta__ = {
 }
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 0, -67 )
+position = Vector2( -305.797, 215.559 )
 scale = Vector2( 1.20669, 1.16475 )
 texture = ExtResource( 2 )
 centered = false
+offset = Vector2( 253.418, -242.592 )
 
 [node name="VersionLabel" type="Label" parent="."]
 light_mask = 0
@@ -67,6 +548,9 @@ custom_colors/font_color = Color( 1, 1, 1, 0.278431 )
 text = "v1.0.1"
 valign = 1
 max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label0" type="Label" parent="."]
 light_mask = 0
@@ -82,6 +566,9 @@ custom_fonts/font = ExtResource( 3 )
 text = "Enter Dungeon"
 valign = 1
 max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label1" type="Label" parent="."]
 light_mask = 0
@@ -99,7 +586,7 @@ valign = 1
 max_lines_visible = 1
 
 [node name="pointer" type="Sprite" parent="."]
-position = Vector2( 707, 897 )
+position = Vector2( 690, 897 )
 scale = Vector2( 6.125, 6.125 )
 texture = ExtResource( 4 )
 offset = Vector2( 0, -3 )
@@ -126,10 +613,152 @@ texture = ExtResource( 8 )
 
 [node name="TitleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-volume_db = -45.654
+volume_db = -10.4
 pitch_scale = 0.88
 autoplay = true
 bus = "Reverb"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/selected = SubResource( 1 )
+
+[node name="Cinematic" type="AnimationPlayer" parent="."]
+anims/Dungeon = SubResource( 2 )
+anims/Pueblo = SubResource( 3 )
+anims/Taverna = SubResource( 4 )
+anims/knight_town = SubResource( 5 )
+
+[node name="background" type="Sprite" parent="Cinematic"]
+visible = false
+position = Vector2( 942.84, 544.448 )
+scale = Vector2( 4.34682, 4.16722 )
+texture = ExtResource( 11 )
+
+[node name="Town2" type="Sprite" parent="Cinematic"]
+visible = false
+position = Vector2( 693.863, 559.642 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 22 )
+
+[node name="orc_warrior_run_anim_f0" type="Sprite" parent="Cinematic/Town2"]
+visible = false
+position = Vector2( -14.7335, 10.2738 )
+scale = Vector2( 1, 1.07623 )
+texture = ExtResource( 18 )
+
+[node name="skelet_run_anim_f4" type="Sprite" parent="Cinematic/Town2"]
+visible = false
+position = Vector2( -11.6841, -6.87893 )
+texture = ExtResource( 21 )
+
+[node name="orc_warrior_run_anim_f1" type="Sprite" parent="Cinematic/Town2"]
+visible = false
+position = Vector2( 47.0162, -2.30485 )
+texture = ExtResource( 18 )
+flip_h = true
+
+[node name="skelet_run_anim_f2" type="Sprite" parent="Cinematic/Town2"]
+visible = false
+position = Vector2( -7.49125, 28.9512 )
+texture = ExtResource( 20 )
+
+[node name="orc_warrior_run_anim_f2" type="Sprite" parent="Cinematic/Town2"]
+visible = false
+position = Vector2( 45.8727, 19.4219 )
+texture = ExtResource( 18 )
+flip_h = true
+
+[node name="weapon_red_gem_sword" type="Sprite" parent="Cinematic/Town2"]
+visible = false
+position = Vector2( 14.1986, 9.93481 )
+rotation = 9.42478
+scale = Vector2( 0.900524, 0.900524 )
+texture = ExtResource( 23 )
+offset = Vector2( 0.089325, -21.0654 )
+
+[node name="knight_m_idle_anim_f3" type="Sprite" parent="Cinematic/Town2"]
+position = Vector2( 14.6167, 3.03153 )
+scale = Vector2( 1.1, 1.1 )
+texture = ExtResource( 16 )
+
+[node name="Town" type="Sprite" parent="Cinematic"]
+visible = false
+position = Vector2( 692.52, 556.94 )
+scale = Vector2( 6.24891, 6.24891 )
+texture = ExtResource( 22 )
+
+[node name="orc_warrior_run_anim_f0" type="Sprite" parent="Cinematic/Town"]
+position = Vector2( -79.5915, -11.5601 )
+texture = ExtResource( 18 )
+
+[node name="skelet_run_anim_f2" type="Sprite" parent="Cinematic/Town"]
+position = Vector2( -11.657, 19.7863 )
+texture = ExtResource( 20 )
+
+[node name="orc_warrior_run_anim_f1" type="Sprite" parent="Cinematic/Town"]
+position = Vector2( -56.9534, 19.0996 )
+texture = ExtResource( 19 )
+
+[node name="skelet_run_anim_f3" type="Sprite" parent="Cinematic/Town"]
+position = Vector2( 34.5806, -21.985 )
+texture = ExtResource( 21 )
+
+[node name="skelet_run_anim_f0" type="Sprite" parent="Cinematic/Town"]
+position = Vector2( -116.163, 1.88033 )
+texture = ExtResource( 17 )
+
+[node name="orc_warrior_run_anim_f2" type="Sprite" parent="Cinematic/Town"]
+position = Vector2( 107.809, 43.7039 )
+texture = ExtResource( 18 )
+
+[node name="Tabern_background-taberner" type="Sprite" parent="Cinematic"]
+position = Vector2( 1214.96, 724.492 )
+scale = Vector2( 10.9964, 10.9964 )
+texture = ExtResource( 10 )
+
+[node name="knight_beer" type="Sprite" parent="Cinematic"]
+position = Vector2( 1036.34, 560.407 )
+scale = Vector2( 10.9964, 10.9964 )
+texture = ExtResource( 12 )
+
+[node name="Table" type="Sprite" parent="Cinematic"]
+position = Vector2( 715.055, 802.286 )
+scale = Vector2( 10.9964, 10.9964 )
+texture = ExtResource( 14 )
+offset = Vector2( -18.8973, 5.46535 )
+
+[node name="Table2" type="Sprite" parent="Cinematic"]
+position = Vector2( 1638.92, 801.021 )
+scale = Vector2( 10.9964, 10.9964 )
+texture = ExtResource( 14 )
+offset = Vector2( -18.8973, 5.46535 )
+
+[node name="white" type="Sprite" parent="Cinematic"]
+visible = false
+position = Vector2( 952.475, 536.292 )
+texture = ExtResource( 15 )
+
+[node name="Help" type="Sprite" parent="Cinematic"]
+visible = false
+position = Vector2( 973.665, 536.292 )
+texture = ExtResource( 13 )
+
+[node name="Dungeon_entrance" type="Sprite" parent="Cinematic"]
+visible = false
+position = Vector2( 323.754, -193.446 )
+scale = Vector2( 15, 15 )
+texture = ExtResource( 26 )
+
+[node name="knight_down_1" type="Sprite" parent="Cinematic/Dungeon_entrance"]
+position = Vector2( 42.0445, 23.8973 )
+texture = ExtResource( 24 )
+
+[node name="Picture1" type="Sprite" parent="Cinematic/Dungeon_entrance"]
+position = Vector2( 62.3463, 28.6088 )
+scale = Vector2( 0.0722658, 0.0722658 )
+texture = ExtResource( 25 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 13 )
+anim_player = NodePath("../Cinematic")
+active = true
+parameters/playback = SubResource( 14 )

@@ -51,7 +51,7 @@ extents = Vector2( 3, 3 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 0.207068, 0.663488, 1, 1 )
+self_modulate = Color( 0.815686, 0.921569, 0.8, 1 )
 light_mask = 3
 position = Vector2( 8, 8 )
 texture = ExtResource( 2 )

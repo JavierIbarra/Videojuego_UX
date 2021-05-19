@@ -136,6 +136,9 @@ rect_scale = Vector2( 0.6, 0.6 )
 custom_fonts/font = ExtResource( 3 )
 text = "Depth: 9500 ft"
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PausePopup" type="Popup" parent="HUD"]
 pause_mode = 2
@@ -170,7 +173,6 @@ align = 1
 valign = 1
 
 [node name="Label0" type="Label" parent="HUD/PausePopup"]
-modulate = Color( 0.989091, 0.74754, 0.60261, 1 )
 light_mask = 0
 anchor_left = 0.5
 anchor_top = 1.0
@@ -205,7 +207,7 @@ valign = 1
 max_lines_visible = 1
 
 [node name="pointer" type="Sprite" parent="HUD/PausePopup"]
-position = Vector2( 710, 568 )
+position = Vector2( 690, 568 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 6 )
 offset = Vector2( 0, -3 )
