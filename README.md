@@ -1,5 +1,7 @@
 # Videojuego_UX
 
+## Cambios Realizados
+
 * Cofre, posiciones y monstruos permanecen ocultos en las sombras
 * Implementación de un CanvasModulate que genera una sombra que cubre todo el mapa dando un tono más oscuro al juego
 * Implementación de sprites para los movimientos al caminar hacia arriba y abajo
