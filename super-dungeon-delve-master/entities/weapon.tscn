@@ -29,6 +29,7 @@ collision_mask = 4
 script = ExtResource( 1 )
 
 [node name="weapon_red_gem_mace" type="Sprite" parent="."]
+light_mask = 2
 position = Vector2( -0.0429649, -8.32391 )
 scale = Vector2( 0.0898907, 0.0898907 )
 texture = ExtResource( 2 )

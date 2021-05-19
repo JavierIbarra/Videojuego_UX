@@ -628,7 +628,6 @@ anims/Taverna = SubResource( 4 )
 anims/knight_town = SubResource( 5 )
 
 [node name="background" type="Sprite" parent="Cinematic"]
-visible = false
 position = Vector2( 942.84, 544.448 )
 scale = Vector2( 4.34682, 4.16722 )
 texture = ExtResource( 11 )
@@ -681,8 +680,7 @@ scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 16 )
 
 [node name="Town" type="Sprite" parent="Cinematic"]
-visible = false
-position = Vector2( 692.52, 556.94 )
+position = Vector2( 813.502, 571.731 )
 scale = Vector2( 6.24891, 6.24891 )
 texture = ExtResource( 22 )
 
@@ -712,23 +710,23 @@ texture = ExtResource( 18 )
 
 [node name="Tabern_background-taberner" type="Sprite" parent="Cinematic"]
 position = Vector2( 1214.96, 724.492 )
-scale = Vector2( 10.9964, 10.9964 )
+scale = Vector2( 15, 15 )
 texture = ExtResource( 10 )
 
 [node name="knight_beer" type="Sprite" parent="Cinematic"]
-position = Vector2( 1036.34, 560.407 )
-scale = Vector2( 10.9964, 10.9964 )
+position = Vector2( 972.206, 492.633 )
+scale = Vector2( 15, 15 )
 texture = ExtResource( 12 )
 
 [node name="Table" type="Sprite" parent="Cinematic"]
-position = Vector2( 715.055, 802.286 )
-scale = Vector2( 10.9964, 10.9964 )
+position = Vector2( 460.646, 880.103 )
+scale = Vector2( 15, 15 )
 texture = ExtResource( 14 )
 offset = Vector2( -18.8973, 5.46535 )
 
 [node name="Table2" type="Sprite" parent="Cinematic"]
-position = Vector2( 1638.92, 801.021 )
-scale = Vector2( 10.9964, 10.9964 )
+position = Vector2( 1878.98, 868.878 )
+scale = Vector2( 15, 15 )
 texture = ExtResource( 14 )
 offset = Vector2( -18.8973, 5.46535 )
 

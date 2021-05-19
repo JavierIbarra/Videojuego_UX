@@ -75,7 +75,7 @@ func start_level():
 	exit.position.y = exit_cell.y * globals.GRID_SIZE
 	add_child(exit)
 	
-	if globals.depth == 2 or globals.depth == 5 or globals.depth == 7:
+	if globals.depth == 2 or globals.depth == 5 or globals.depth == 7 or globals.depth == 11:
 		var innkeeper = SCENE_INNKEEPER.instance()
 		
 		var innkeeper_cell = globals.map.get_random_floor_cell(exit_room["left"], exit_room["top"], exit_room["width"], exit_room["height"])
