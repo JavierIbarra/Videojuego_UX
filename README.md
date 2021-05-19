@@ -15,5 +15,5 @@
 
 ## Controles
 
-* Atacar: Enter / Kp Enter / Space
+* Atacar: Ctrl / Z / Space
 * Cerrar dialogo: Enter / Kp Enter / Space  
