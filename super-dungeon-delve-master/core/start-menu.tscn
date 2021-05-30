@@ -680,7 +680,7 @@ scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 16 )
 
 [node name="Town" type="Sprite" parent="Cinematic"]
-position = Vector2( 813.502, 571.731 )
+position = Vector2( 885.62, 579.13 )
 scale = Vector2( 6.24891, 6.24891 )
 texture = ExtResource( 22 )
 
@@ -709,22 +709,26 @@ position = Vector2( 107.809, 43.7039 )
 texture = ExtResource( 18 )
 
 [node name="Tabern_background-taberner" type="Sprite" parent="Cinematic"]
+visible = false
 position = Vector2( 1214.96, 724.492 )
 scale = Vector2( 15, 15 )
 texture = ExtResource( 10 )
 
 [node name="knight_beer" type="Sprite" parent="Cinematic"]
+visible = false
 position = Vector2( 972.206, 492.633 )
 scale = Vector2( 15, 15 )
 texture = ExtResource( 12 )
 
 [node name="Table" type="Sprite" parent="Cinematic"]
+visible = false
 position = Vector2( 460.646, 880.103 )
 scale = Vector2( 15, 15 )
 texture = ExtResource( 14 )
 offset = Vector2( -18.8973, 5.46535 )
 
 [node name="Table2" type="Sprite" parent="Cinematic"]
+visible = false
 position = Vector2( 1878.98, 868.878 )
 scale = Vector2( 15, 15 )
 texture = ExtResource( 14 )

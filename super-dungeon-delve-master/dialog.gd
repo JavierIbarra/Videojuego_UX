@@ -39,3 +39,9 @@ func load_dialog():
 
 func _on_Tween_tween_completed(object, key):
 	finished = true
+
+func exist():
+	if globals.depth in dialog:
+		return true
+	else:
+		return false

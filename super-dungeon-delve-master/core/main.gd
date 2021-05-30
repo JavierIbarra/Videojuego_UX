@@ -134,5 +134,6 @@ func next_level():
 	
 func new_load():
 	var dialogo = SCENE_DIALOG.instance()
-	$"HUD".add_child(dialogo)
+	if dialogo.exist():
+		$"HUD".add_child(dialogo)
 	
