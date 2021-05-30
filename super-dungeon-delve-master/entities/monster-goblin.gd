@@ -4,6 +4,7 @@ var _base_speed: = 0.0
 const RUN_AWAY_TIME = 0.7
 
 func _ready():
+	#$AudioMonsterGoblin.play()
 	$AnimatedSprite.animation = "goblin"
 	health = 18
 	gold = 20

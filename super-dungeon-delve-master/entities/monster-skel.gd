@@ -4,6 +4,7 @@ var move_time: = 0.0
 const SCENE_BONE = preload("res://entities/bone.tscn")
 
 func _ready():
+	#$AudioMonsterSkel.play()
 	$AnimatedSprite.animation = "skel"
 	health = 10
 	gold = 5
