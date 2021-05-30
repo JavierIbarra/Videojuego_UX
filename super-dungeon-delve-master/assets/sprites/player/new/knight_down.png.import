@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/knight_m_hit_anim_f0.png-9fe1202d0abf0282a2df78caa2b6647e.stex"
+path="res://.import/knight_down.png-45f9a664298e1b9540d505f69a5745f3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/knight_m_hit_anim_f0.png"
-dest_files=[ "res://.import/knight_m_hit_anim_f0.png-9fe1202d0abf0282a2df78caa2b6647e.stex" ]
+source_file="res://assets/sprites/player/new/knight_down.png"
+dest_files=[ "res://.import/knight_down.png-45f9a664298e1b9540d505f69a5745f3.stex" ]
 
 [params]
 
@@ -24,7 +24,7 @@ flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/splash/title.png" type="Texture" id=2]
 [ext_resource path="res://resources/font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/ui/pointer.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/player/knight_m_idle_anim_f1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/player/old/knight_m_idle_anim_f0.png" type="Texture" id=5]
 [ext_resource path="res://assets/misc/coin.png" type="Texture" id=6]
 [ext_resource path="res://assets/misc/potion.png" type="Texture" id=7]
 [ext_resource path="res://assets/misc/chest.png" type="Texture" id=8]
@@ -15,7 +15,7 @@
 [ext_resource path="res://assets/cinematic/tavern/Help.png" type="Texture" id=13]
 [ext_resource path="res://assets/cinematic/tavern/Table.png" type="Texture" id=14]
 [ext_resource path="res://assets/cinematic/tavern/white.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/player/knight_m_idle_anim_f3.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/player/old/knight_down_1.png" type="Texture" id=16]
 [ext_resource path="res://assets/sprites/monsters/skelet_run_anim_f0.png" type="Texture" id=17]
 [ext_resource path="res://assets/sprites/monsters/orc_warrior_run_anim_f0.png" type="Texture" id=18]
 [ext_resource path="res://assets/sprites/monsters/orc_warrior_run_anim_f1.png" type="Texture" id=19]
@@ -23,7 +23,7 @@
 [ext_resource path="res://assets/sprites/monsters/skelet_run_anim_f3.png" type="Texture" id=21]
 [ext_resource path="res://assets/cinematic/Town/Town.png" type="Texture" id=22]
 [ext_resource path="res://assets/sprites/player/weapon_red_gem_sword.png" type="Texture" id=23]
-[ext_resource path="res://assets/sprites/player/knight_down_1.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/player/new/knight_m_idle_anim_f0.png" type="Texture" id=24]
 [ext_resource path="res://assets/cinematic/tavern/Picture1.png" type="Texture" id=25]
 [ext_resource path="res://assets/cinematic/Dungeon/Dungeon_entrance.png" type="Texture" id=26]
 
@@ -584,6 +584,9 @@ custom_fonts/font = ExtResource( 3 )
 text = "Exit"
 valign = 1
 max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="pointer" type="Sprite" parent="."]
 position = Vector2( 690, 897 )
@@ -594,7 +597,7 @@ offset = Vector2( 0, -3 )
 [node name="knight" type="Sprite" parent="."]
 position = Vector2( 284.572, 718 )
 scale = Vector2( 16.5714, 16.5714 )
-texture = ExtResource( 5 )
+texture = ExtResource( 24 )
 
 [node name="coin" type="Sprite" parent="."]
 position = Vector2( 1721.5, 757.5 )
@@ -628,6 +631,7 @@ anims/Taverna = SubResource( 4 )
 anims/knight_town = SubResource( 5 )
 
 [node name="background" type="Sprite" parent="Cinematic"]
+visible = false
 position = Vector2( 942.84, 544.448 )
 scale = Vector2( 4.34682, 4.16722 )
 texture = ExtResource( 11 )
@@ -677,10 +681,11 @@ offset = Vector2( 0.089325, -21.0654 )
 [node name="knight_m_idle_anim_f3" type="Sprite" parent="Cinematic/Town2"]
 position = Vector2( 14.6167, 3.03153 )
 scale = Vector2( 1.1, 1.1 )
-texture = ExtResource( 16 )
+texture = ExtResource( 5 )
 
 [node name="Town" type="Sprite" parent="Cinematic"]
-position = Vector2( 885.62, 579.13 )
+visible = false
+position = Vector2( 692.52, 556.94 )
 scale = Vector2( 6.24891, 6.24891 )
 texture = ExtResource( 22 )
 
@@ -752,7 +757,7 @@ texture = ExtResource( 26 )
 
 [node name="knight_down_1" type="Sprite" parent="Cinematic/Dungeon_entrance"]
 position = Vector2( 42.0445, 23.8973 )
-texture = ExtResource( 24 )
+texture = ExtResource( 16 )
 
 [node name="Picture1" type="Sprite" parent="Cinematic/Dungeon_entrance"]
 position = Vector2( 62.3463, 28.6088 )

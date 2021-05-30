@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/knight_down_2.png-ce0088fd1c94f2e6c8577c877c64ac4e.stex"
+path="res://.import/knight_m_run_anim_f2.png-30d5ce65f77ec5200e0a298f9f584822.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/knight_down_2.png"
-dest_files=[ "res://.import/knight_down_2.png-ce0088fd1c94f2e6c8577c877c64ac4e.stex" ]
+source_file="res://assets/sprites/player/old/knight_m_run_anim_f2.png"
+dest_files=[ "res://.import/knight_m_run_anim_f2.png-30d5ce65f77ec5200e0a298f9f584822.stex" ]
 
 [params]
 

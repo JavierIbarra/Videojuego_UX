@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/knight_m_idle_anim_f2.png-be88bb26c46897148ee32c8b914eb35a.stex"
+path="res://.import/knight_up_2.png-769bd2fccc0a50724209f5d96e30505f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/knight_m_idle_anim_f2.png"
-dest_files=[ "res://.import/knight_m_idle_anim_f2.png-be88bb26c46897148ee32c8b914eb35a.stex" ]
+source_file="res://assets/sprites/player/old/knight_up_2.png"
+dest_files=[ "res://.import/knight_up_2.png-769bd2fccc0a50724209f5d96e30505f.stex" ]
 
 [params]
 
@@ -24,7 +24,7 @@ flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

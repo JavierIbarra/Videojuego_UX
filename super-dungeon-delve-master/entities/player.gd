@@ -21,6 +21,8 @@ export var weapon_damage = 10.0
 
 const SCENE_WEAPON: = preload("res://entities/weapon.tscn")
 
+var selector = {0:["down_new", "hit_new", "idle_new", "up_new", "walk_new"], 1:["down", "hit", "idle", "up", "walk"]}
+
 func _ready():
 	rng.randomize()
 	var zoom_factor = OS.get_screen_dpi(OS.get_current_screen()) / 480.0
@@ -68,7 +70,11 @@ func _physics_process(delta: float):
 	if Input.is_action_pressed("attack") and _attack_cooldown <= 0.001:
 		_attack()
 		
-#
+	if Input.is_action_pressed("inventario") :
+		if globals.skin == 1:
+			globals.skin = 0
+		else:
+			globals.skin = 1
 #
 #
 func _get_direction() -> Vector2:
@@ -81,23 +87,23 @@ func _get_direction() -> Vector2:
 		_attack_dir = new_dir	
 		
 	if _recoil_time > 0:
-		$Sprite.play("hit")	
+		$Sprite.play(selector[globals.skin][1])	
 		new_dir = _recoil_dir
 		
 	if new_dir.x != 0 or new_dir.y != 0:
 		_last_dir = new_dir	
 		
 	if new_dir.x > 0 or new_dir.x < 0:
-		if _recoil_time < 0.01: $Sprite.play("walk")
+		if _recoil_time < 0.01: $Sprite.play(selector[globals.skin][4])
 		
 	elif new_dir.y < 0:
-		if _recoil_time < 0.01: $Sprite.play("up")
+		if _recoil_time < 0.01: $Sprite.play(selector[globals.skin][3])
 	
 	elif new_dir.y > 0:
-		if _recoil_time < 0.01: $Sprite.play("down")
+		if _recoil_time < 0.01: $Sprite.play(selector[globals.skin][0])
 	
 	else:
-		$Sprite.play("idle")
+		$Sprite.play(selector[globals.skin][2])
 				
 	return new_dir
 

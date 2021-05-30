@@ -11,9 +11,11 @@
 * Pantalla en rojo al tener menos de un 20% de vida
 * Cambio color posiones
 * Nuevas Armas
+* Nueva skin personaje principal
 
 
 ## Controles
 
 * Atacar: Ctrl / Z / Space
 * Cerrar dialogo: Enter / Kp Enter / Space  
+* Cambiar skin personaje principal: I
