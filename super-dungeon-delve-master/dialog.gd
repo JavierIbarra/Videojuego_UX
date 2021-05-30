@@ -25,6 +25,7 @@ func load_dialog():
 	if dialog_index < dialog[globals.depth].size():
 		get_tree().paused = true
 		finished = false
+		$AudioStreamPlayer.play()
 		$RichTextLabel.bbcode_text = dialog[globals.depth][dialog_index]
 		$RichTextLabel.percent_visible = 0
 		var tween_duration = text_speed * dialog[globals.depth][dialog_index].length()
@@ -39,6 +40,7 @@ func load_dialog():
 
 func _on_Tween_tween_completed(object, key):
 	finished = true
+	$AudioStreamPlayer.stop()
 
 func exist():
 	if globals.depth in dialog:
