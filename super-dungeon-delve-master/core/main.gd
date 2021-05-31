@@ -75,6 +75,18 @@ func start_level():
 	exit.position.y = exit_cell.y * globals.GRID_SIZE
 	add_child(exit)
 	
+	# Ultimo nivel
+	if globals.depth == 12:
+		var monster: KinematicBody2D
+		monster = SCENE_MONSTER.instance()
+		monster.set_script(preload("res://entities/monster-boss.gd"))
+		exit_cell = globals.map.get_random_floor_cell(exit_room["left"], exit_room["top"], exit_room["width"], exit_room["height"])
+		monster.position.x = exit_cell.x * globals.GRID_SIZE
+		monster.position.y = exit_cell.y * globals.GRID_SIZE
+		monster.factor = 2
+		add_child(monster)
+		
+	
 	if globals.depth == 2 or globals.depth == 5 or globals.depth == 7 or globals.depth == 11:
 		var innkeeper = SCENE_INNKEEPER.instance()
 		
