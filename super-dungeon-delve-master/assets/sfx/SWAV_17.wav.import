@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SWAV_17.wav-85852c5723cbb51d0e8bb6a7ee59a074.sample"
+
+[deps]
+
+source_file="res://assets/sfx/SWAV_17.wav"
+dest_files=[ "res://.import/SWAV_17.wav-85852c5723cbb51d0e8bb6a7ee59a074.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

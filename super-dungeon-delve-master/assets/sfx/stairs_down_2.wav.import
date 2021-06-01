@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stairs_down_2.wav-f036b43d4c1b7910e3c6320b8faf61c1.sample"
+
+[deps]
+
+source_file="res://assets/sfx/stairs_down_2.wav"
+dest_files=[ "res://.import/stairs_down_2.wav-f036b43d4c1b7910e3c6320b8faf61c1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

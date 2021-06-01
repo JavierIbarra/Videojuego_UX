@@ -7,7 +7,7 @@
 [ext_resource path="res://core/pause-menu.gd" type="Script" id=5]
 [ext_resource path="res://assets/ui/pointer.png" type="Texture" id=6]
 [ext_resource path="res://assets/music/main.ogg" type="AudioStream" id=7]
-[ext_resource path="res://assets/sfx/exit.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sfx/stairs_down_2.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/music/Dungeon.wav" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -224,18 +224,18 @@ pause_mode = 2
 stream = ExtResource( 7 )
 volume_db = -11.44
 pitch_scale = 0.9
-autoplay = true
 
 [node name="SfxExit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -2.017
-pitch_scale = 0.45
+pitch_scale = 0.8
 bus = "Reverb"
 
 [node name="Musica2" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 9 )
 volume_db = -11.0
+autoplay = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.576471, 0.576471, 0.576471, 1 )
