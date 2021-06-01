@@ -3,7 +3,7 @@ extends Monster
 const SCENE_SLIME = preload("res://entities/slime.tscn")
 
 func _ready():
-	#$AudioMonsterSlime.play()
+	$AudioMonsterSlime.play()
 	$AnimatedSprite.animation = "slime"
 	$Particles2D.modulate = Color("97da3f")
 	$SfxDeath.stream = load("res://assets/sfx/squish.wav")

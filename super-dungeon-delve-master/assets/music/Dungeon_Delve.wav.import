@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Dungeon_Delve.wav-d82e115e40c1eef3c16505c8097f29af.sample"
+
+[deps]
+
+source_file="res://assets/music/Dungeon_Delve.wav"
+dest_files=[ "res://.import/Dungeon_Delve.wav-d82e115e40c1eef3c16505c8097f29af.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

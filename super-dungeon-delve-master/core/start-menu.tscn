@@ -1,21 +1,20 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://core/start-menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/splash/title.png" type="Texture" id=2]
 [ext_resource path="res://resources/font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/ui/pointer.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/player/old/knight_m_idle_anim_f0.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/player/new/knight_down_1.png" type="Texture" id=5]
 [ext_resource path="res://assets/misc/coin.png" type="Texture" id=6]
 [ext_resource path="res://assets/misc/potion.png" type="Texture" id=7]
 [ext_resource path="res://assets/misc/chest.png" type="Texture" id=8]
-[ext_resource path="res://assets/music/title.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/music/Dungeon_Delve.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/cinematic/tavern/Tabern_background-taberner.png" type="Texture" id=10]
 [ext_resource path="res://background.png" type="Texture" id=11]
 [ext_resource path="res://assets/cinematic/tavern/knight_beer.png" type="Texture" id=12]
 [ext_resource path="res://assets/cinematic/tavern/Help.png" type="Texture" id=13]
 [ext_resource path="res://assets/cinematic/tavern/Table.png" type="Texture" id=14]
 [ext_resource path="res://assets/cinematic/tavern/white.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/player/old/knight_down_1.png" type="Texture" id=16]
 [ext_resource path="res://assets/sprites/monsters/skelet_run_anim_f0.png" type="Texture" id=17]
 [ext_resource path="res://assets/sprites/monsters/orc_warrior_run_anim_f0.png" type="Texture" id=18]
 [ext_resource path="res://assets/sprites/monsters/orc_warrior_run_anim_f1.png" type="Texture" id=19]
@@ -616,8 +615,7 @@ texture = ExtResource( 8 )
 
 [node name="TitleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-volume_db = -10.4
-pitch_scale = 0.88
+volume_db = -11.0
 autoplay = true
 bus = "Reverb"
 
@@ -681,17 +679,13 @@ offset = Vector2( 0.089325, -21.0654 )
 [node name="knight_m_idle_anim_f3" type="Sprite" parent="Cinematic/Town2"]
 position = Vector2( 14.6167, 3.03153 )
 scale = Vector2( 1.1, 1.1 )
-texture = ExtResource( 5 )
+texture = ExtResource( 24 )
 
 [node name="Town" type="Sprite" parent="Cinematic"]
 visible = false
 position = Vector2( 692.52, 556.94 )
 scale = Vector2( 6.24891, 6.24891 )
 texture = ExtResource( 22 )
-
-[node name="orc_warrior_run_anim_f0" type="Sprite" parent="Cinematic/Town"]
-position = Vector2( -79.5915, -11.5601 )
-texture = ExtResource( 18 )
 
 [node name="skelet_run_anim_f2" type="Sprite" parent="Cinematic/Town"]
 position = Vector2( -11.657, 19.7863 )
@@ -711,6 +705,10 @@ texture = ExtResource( 17 )
 
 [node name="orc_warrior_run_anim_f2" type="Sprite" parent="Cinematic/Town"]
 position = Vector2( 107.809, 43.7039 )
+texture = ExtResource( 18 )
+
+[node name="orc_warrior_run_anim_f0" type="Sprite" parent="Cinematic/Town"]
+position = Vector2( -79.5915, -11.5601 )
 texture = ExtResource( 18 )
 
 [node name="Tabern_background-taberner" type="Sprite" parent="Cinematic"]
@@ -757,7 +755,7 @@ texture = ExtResource( 26 )
 
 [node name="knight_down_1" type="Sprite" parent="Cinematic/Dungeon_entrance"]
 position = Vector2( 42.0445, 23.8973 )
-texture = ExtResource( 16 )
+texture = ExtResource( 5 )
 
 [node name="Picture1" type="Sprite" parent="Cinematic/Dungeon_entrance"]
 position = Vector2( 62.3463, 28.6088 )

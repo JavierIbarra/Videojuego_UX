@@ -142,6 +142,13 @@ func next_level():
 	$SfxExit.play(0.0)
 	globals.depth += 1
 	# IMPORTANT! Use call_deferred to prevent "flushing queries" errors/warnings
+	if globals.depth % 2 == 0:
+		$Music.stop()
+		$Musica2.play()
+	else:
+		$Musica2.stop()
+		$Music.play()
+		
 	call_deferred("start_level")
 	
 func new_load():
