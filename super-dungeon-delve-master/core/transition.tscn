@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://core/transition.gd" type="Script" id=1]
+[ext_resource path="res://assets/sfx/grito.wav" type="AudioStream" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -31,3 +32,6 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fade = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )

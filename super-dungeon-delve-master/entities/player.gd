@@ -156,7 +156,7 @@ func take_damage(collision_dir: Vector2, damage: float, factor: float):
 		return
 	
 	$SfxPain.volume_db = rng.randf_range(-10.0, 1.0)
-	$SfxPain.pitch_scale = rng.randf_range(0.7, 1.3)
+	$SfxPain.pitch_scale = rng.randf_range(0.7, 0.8)
 	$SfxPain.play(0.0)	
 
 	var actual_damage = floor( (damage + (randi() % 5)) * factor)

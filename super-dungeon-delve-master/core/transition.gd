@@ -3,6 +3,7 @@ extends CanvasLayer
 onready var anim_play : AnimationPlayer = $AnimationPlayer
 
 func change_scene_loc(path : String) -> void:
+	$AudioStreamPlayer.play()
 	layer = 1
 	anim_play.play("fade")
 	yield(anim_play, "animation_finished")

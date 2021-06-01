@@ -58,16 +58,6 @@ animations = [ {
 "name": "walk_new",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 15 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 31 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
 "loop": true,
 "name": "idle_new",
@@ -78,14 +68,24 @@ animations = [ {
 "name": "hit",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "hit_new",
+"name": "walk",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 15 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "up_new",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "hit_new",
 "speed": 5.0
 } ]
 
@@ -107,7 +107,7 @@ position = Vector2( 8, 8 )
 z_index = 10
 frames = SubResource( 1 )
 animation = "walk_new"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
