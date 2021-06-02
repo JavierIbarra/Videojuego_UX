@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/taverner.wav-d9227f51bc3b1e25172281b93b87dcbe.sample"
+
+[deps]
+
+source_file="res://assets/sfx/cinematic/taverner.wav"
+dest_files=[ "res://.import/taverner.wav-d9227f51bc3b1e25172281b93b87dcbe.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

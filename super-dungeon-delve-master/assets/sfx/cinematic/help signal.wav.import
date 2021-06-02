@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/help signal.wav-ca1f6ed83b1db8bfe25490ede1e9946d.sample"
+
+[deps]
+
+source_file="res://assets/sfx/cinematic/help signal.wav"
+dest_files=[ "res://.import/help signal.wav-ca1f6ed83b1db8bfe25490ede1e9946d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

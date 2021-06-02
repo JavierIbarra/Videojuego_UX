@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tavern noice.wav-d482d6a3fe967ac6563bb55a7a82e657.sample"
+
+[deps]
+
+source_file="res://assets/sfx/cinematic/tavern noice.wav"
+dest_files=[ "res://.import/tavern noice.wav-d482d6a3fe967ac6563bb55a7a82e657.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

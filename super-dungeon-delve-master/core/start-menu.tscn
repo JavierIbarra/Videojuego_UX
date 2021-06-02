@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://core/start-menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/splash/title.png" type="Texture" id=2]
@@ -8,13 +8,14 @@
 [ext_resource path="res://assets/misc/coin.png" type="Texture" id=6]
 [ext_resource path="res://assets/misc/potion.png" type="Texture" id=7]
 [ext_resource path="res://assets/misc/chest.png" type="Texture" id=8]
-[ext_resource path="res://assets/music/Dungeon_Delve.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/music/cinematic/dungeon_delve_main_27.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/cinematic/tavern/Tabern_background-taberner.png" type="Texture" id=10]
 [ext_resource path="res://background.png" type="Texture" id=11]
 [ext_resource path="res://assets/cinematic/tavern/knight_beer.png" type="Texture" id=12]
 [ext_resource path="res://assets/cinematic/tavern/Help.png" type="Texture" id=13]
 [ext_resource path="res://assets/cinematic/tavern/Table.png" type="Texture" id=14]
 [ext_resource path="res://assets/cinematic/tavern/white.png" type="Texture" id=15]
+[ext_resource path="res://assets/sfx/cinematic/tavern noice.wav" type="AudioStream" id=16]
 [ext_resource path="res://assets/sprites/monsters/skelet_run_anim_f0.png" type="Texture" id=17]
 [ext_resource path="res://assets/sprites/monsters/orc_warrior_run_anim_f0.png" type="Texture" id=18]
 [ext_resource path="res://assets/sprites/monsters/orc_warrior_run_anim_f1.png" type="Texture" id=19]
@@ -25,6 +26,9 @@
 [ext_resource path="res://assets/sprites/player/new/knight_m_idle_anim_f0.png" type="Texture" id=24]
 [ext_resource path="res://assets/cinematic/tavern/Picture1.png" type="Texture" id=25]
 [ext_resource path="res://assets/cinematic/Dungeon/Dungeon_entrance.png" type="Texture" id=26]
+[ext_resource path="res://assets/sfx/cinematic/town_attack.wav" type="AudioStream" id=27]
+[ext_resource path="res://assets/sfx/cinematic/town_attack_knight.wav" type="AudioStream" id=28]
+[ext_resource path="res://assets/sfx/cinematic/dungeon_entrance.wav" type="AudioStream" id=29]
 
 [sub_resource type="Animation" id=1]
 resource_name = "selected"
@@ -66,7 +70,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false ]
 }
 tracks/1/type = "value"
@@ -93,6 +97,20 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 6.22768, 6.22768 ), Vector2( 15, 15 ) ]
 }
+tracks/3/type = "audio"
+tracks/3/path = NodePath("Cinematic/enter the dungeon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 29 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Pueblo"
@@ -118,7 +136,7 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, true ]
 }
 tracks/2/type = "value"
@@ -130,8 +148,22 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("Cinematic/Town Attack")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 27 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=4]
@@ -230,7 +262,7 @@ tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 8.65, 8.7, 8.75, 10 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 2,
+"update": 0,
 "values": [ false, true, false, true, false ]
 }
 tracks/8/type = "value"
@@ -242,7 +274,7 @@ tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 8.6, 8.65, 8.7, 8.75 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ false, true, false, true, false ]
 }
 tracks/9/type = "value"
@@ -254,7 +286,7 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 10 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false ]
 }
 tracks/10/type = "value"
@@ -266,7 +298,7 @@ tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 10 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false ]
 }
 tracks/11/type = "value"
@@ -278,7 +310,7 @@ tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 10 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false ]
 }
 tracks/12/type = "value"
@@ -290,7 +322,7 @@ tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0, 10 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false ]
 }
 tracks/13/type = "value"
@@ -302,8 +334,22 @@ tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ false ]
+}
+tracks/14/type = "audio"
+tracks/14/path = NodePath("Cinematic/tavern noice")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 16 )
+} ],
+"times": PoolRealArray( 0.05 )
 }
 
 [sub_resource type="Animation" id=5]
@@ -330,7 +376,7 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 1, 1.05, 1.1, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ false, true, false, true, false ]
 }
 tracks/2/type = "value"
@@ -342,7 +388,7 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 1, 1.2, 6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ false, false, true, false ]
 }
 tracks/3/type = "value"
@@ -354,7 +400,7 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 1, 1.05, 1.1, 1.15 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false, true, false, false ]
 }
 tracks/4/type = "value"
@@ -402,7 +448,7 @@ tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 1.2, 4.4, 6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ false, true, false ]
 }
 tracks/8/type = "value"
@@ -426,7 +472,7 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 1.2, 5.35 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false ]
 }
 tracks/10/type = "value"
@@ -438,7 +484,7 @@ tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 1.2, 5.35 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false ]
 }
 tracks/11/type = "value"
@@ -450,7 +496,7 @@ tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 1.2, 5.35 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false ]
 }
 tracks/12/type = "value"
@@ -462,7 +508,7 @@ tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 1.2, 5.35 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false ]
 }
 tracks/13/type = "value"
@@ -474,8 +520,22 @@ tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 1.2, 5.35 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false ]
+}
+tracks/14/type = "audio"
+tracks/14/path = NodePath("Cinematic/town_attack_knight")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 28 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="AnimationNodeAnimation" id=6]
@@ -615,7 +675,7 @@ texture = ExtResource( 8 )
 
 [node name="TitleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-volume_db = -11.0
+volume_db = -18.01
 autoplay = true
 bus = "Reverb"
 
@@ -746,6 +806,18 @@ texture = ExtResource( 15 )
 visible = false
 position = Vector2( 973.665, 536.292 )
 texture = ExtResource( 13 )
+
+[node name="enter the dungeon" type="AudioStreamPlayer" parent="Cinematic"]
+stream = ExtResource( 29 )
+
+[node name="town_attack_knight" type="AudioStreamPlayer" parent="Cinematic"]
+stream = ExtResource( 28 )
+
+[node name="Town Attack" type="AudioStreamPlayer" parent="Cinematic"]
+stream = ExtResource( 27 )
+
+[node name="tavern noice" type="AudioStreamPlayer" parent="Cinematic"]
+stream = ExtResource( 16 )
 
 [node name="Dungeon_entrance" type="Sprite" parent="Cinematic"]
 visible = false

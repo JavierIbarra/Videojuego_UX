@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Where Am I Going - Super Mario RPG.mp3-47c15d2247e1ae524d1f52a7e0ce85a9.mp3str"
+
+[deps]
+
+source_file="res://assets/music/cinematic/Where Am I Going - Super Mario RPG.mp3"
+dest_files=[ "res://.import/Where Am I Going - Super Mario RPG.mp3-47c15d2247e1ae524d1f52a7e0ce85a9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

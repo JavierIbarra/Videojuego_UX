@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://core/main.gd" type="Script" id=1]
 [ext_resource path="res://resources/theme.tres" type="Theme" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://core/pause-menu.gd" type="Script" id=5]
 [ext_resource path="res://assets/ui/pointer.png" type="Texture" id=6]
 [ext_resource path="res://assets/music/main.ogg" type="AudioStream" id=7]
-[ext_resource path="res://assets/sfx/stairs_down_2.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sfx/ladders.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/music/Dungeon.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sfx/ambience_dungeon.wav" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/fonts/LifeCraft_Font.ttf"
@@ -219,22 +220,29 @@ offset = Vector2( 0, -3 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/PausePopup"]
 anims/selected = SubResource( 5 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = 11.377
+pitch_scale = 0.81
+autoplay = true
+bus = "Reverb"
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 7 )
-volume_db = -11.44
+volume_db = -20.527
 pitch_scale = 0.9
 
 [node name="SfxExit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -2.017
-pitch_scale = 0.8
+volume_db = -9.085
+pitch_scale = 1.1
 bus = "Reverb"
 
 [node name="Musica2" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 9 )
-volume_db = -11.0
+volume_db = -16.049
 autoplay = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
