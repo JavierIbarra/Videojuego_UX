@@ -75,8 +75,8 @@ func start_level():
 	exit.position.y = exit_cell.y * globals.GRID_SIZE
 	add_child(exit)
 	
-	# Ultimo nivel
-	if globals.depth == 1:
+	# Ultimo nivel Jefe Final
+	if globals.depth == 12:
 		var monster: KinematicBody2D
 		monster = SCENE_MONSTER.instance()
 		monster.set_script(preload("res://entities/monster-boss.gd"))

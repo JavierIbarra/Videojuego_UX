@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Dungeon"
-run/main_scene="res://core/start-menu.tscn"
+run/main_scene="res://core/cinematica.tscn"
 boot_splash/image="res://assets/splash/boot.png"
 boot_splash/fullsize=false
 config/icon="res://assets/icon.png"
