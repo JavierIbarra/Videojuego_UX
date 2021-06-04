@@ -1,7 +1,7 @@
 extends Monster
 
 var move_time: = 0.0
-const SCENE_BONE = preload("res://entities/bone.tscn")
+const SCENE_BONE = preload("res://entities/ball.tscn")
 
 func _ready():
 	#$AudioMonsterSkel.play()

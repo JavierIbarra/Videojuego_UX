@@ -6,7 +6,7 @@ const SCENE_BONE = preload("res://entities/bone.tscn")
 func _ready():
 	$AudioMonsterSkel.play()
 	$AnimatedSprite.animation = "skel"
-	health = 10
+	health = 10 
 	gold = 5
 	damage = 10
 	death_sfx = "2"

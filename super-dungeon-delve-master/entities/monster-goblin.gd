@@ -6,7 +6,7 @@ const RUN_AWAY_TIME = 0.7
 func _ready():
 	$AudioMonsterGoblin.play()
 	$AnimatedSprite.animation = "goblin"
-	health = 18
+	health = 18 
 	gold = 20
 	speed = 20.0 + randf() * 30.0
 	_base_speed = speed

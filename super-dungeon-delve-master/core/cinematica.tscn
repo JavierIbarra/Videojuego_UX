@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/cinematic/Town/Town.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/player/weapon_red_gem_sword.png" type="Texture" id=2]
@@ -24,10 +24,6 @@
 [ext_resource path="res://assets/sfx/cinematic/dungeon_entrance.wav" type="AudioStream" id=23]
 
 [sub_resource type="Animation" id=1]
-resource_name = "selected"
-loop = true
-
-[sub_resource type="Animation" id=2]
 resource_name = "Dungeon"
 length = 5.0
 tracks/0/type = "value"
@@ -81,7 +77,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Pueblo"
 length = 6.0
 tracks/0/type = "value"
@@ -135,7 +131,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 length = 10.0
 step = 0.05
 tracks/0/type = "value"
@@ -321,7 +317,7 @@ tracks/14/keys = {
 "times": PoolRealArray( 0.05 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 length = 6.0
 step = 0.05
 tracks/0/type = "value"
@@ -515,14 +511,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/selected = SubResource( 1 )
-
 [node name="Cinematic" type="AnimationPlayer" parent="."]
-anims/Dungeon = SubResource( 2 )
-anims/Pueblo = SubResource( 3 )
-anims/Taverna = SubResource( 4 )
-anims/knight_town = SubResource( 5 )
+anims/Dungeon = SubResource( 1 )
+anims/Pueblo = SubResource( 2 )
+anims/Taverna = SubResource( 3 )
+anims/knight_town = SubResource( 4 )
 
 [node name="background" type="Sprite" parent="Cinematic"]
 visible = false
