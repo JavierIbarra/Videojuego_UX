@@ -18,6 +18,7 @@ func _process(delta):
 			$Label0.modulate = Color.lawngreen
 			$Label0.rect_position.x = $Label0.rect_position.x - 180
 			$Label1.visible = false
+			$Label2.visible = false
 			$pointer.visible = false
 			# Without this, the label change is never visible before the scene switch
 			yield(get_tree(), 'idle_frame')

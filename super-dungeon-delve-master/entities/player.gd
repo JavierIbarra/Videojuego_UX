@@ -19,7 +19,10 @@ export var health = 100
 export var attack_cooldown_time = 0.5
 export var weapon_damage = 10.0
 
-const SCENE_WEAPON: = preload("res://entities/weapon.tscn")
+#const SCENE_WEAPON: = preload("res://entities/weapon.tscn")
+const WEAPON_HAMMER: = preload("res://entities/weapons/hammer.tscn")
+const WEAPON_SWORD: = preload("res://entities/weapons/sword.tscn")
+const WEAPON_SPEAR: = preload("res://entities/weapons/spear.tscn")
 
 var selector = {0:["down_new", "hit_new", "idle_new", "up_new", "walk_new"], 1:["down", "hit", "idle", "up", "walk"]}
 
@@ -68,8 +71,16 @@ func _physics_process(delta: float):
 
 	# Attack
 	if Input.is_action_just_pressed("attack") and _attack_cooldown <= 0.001:
-		_attack()
-		
+		if globals.weapons == "hammer":
+			var hammer: = WEAPON_HAMMER.instance()
+			_attack(hammer)
+		elif globals.weapons == "sword":
+			var sword: = WEAPON_SWORD.instance()
+			_attack(sword)
+		elif globals.weapons == "spear":
+			var spear: = WEAPON_SPEAR.instance()
+			_attack(spear)
+			
 	if Input.is_action_just_pressed("inventario") :
 		if globals.skin == 1:
 			globals.skin = 0
@@ -199,8 +210,8 @@ func add_gold(extragold: int):
 #
 #
 #
-func _attack():
-	var weapon: = SCENE_WEAPON.instance()
+func _attack(weapon):
+	
 	weapon.add_to_group("weapons")
 	
 	$SfxSwipe.pitch_scale = rng.randf_range(0.9, 1.8)

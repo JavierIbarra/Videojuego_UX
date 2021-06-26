@@ -9,3 +9,4 @@ var depth = 1
 var kills = 0
 var skin = 0
 var difficulty = 10
+var weapons = "hammer"
