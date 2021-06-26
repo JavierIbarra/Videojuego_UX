@@ -67,10 +67,10 @@ func _physics_process(delta: float):
 	$Light2D.energy = light_brightness + (cos(_time * 2) * 0.2)
 
 	# Attack
-	if Input.is_action_pressed("attack") and _attack_cooldown <= 0.001:
+	if Input.is_action_just_pressed("attack") and _attack_cooldown <= 0.001:
 		_attack()
 		
-	if Input.is_action_pressed("inventario") :
+	if Input.is_action_just_pressed("inventario") :
 		if globals.skin == 1:
 			globals.skin = 0
 		else:

@@ -3,7 +3,7 @@ class_name Monster
 
 export var speed = 0
 export var health = 100
-export var damage = 5
+export var damage = 5 
 export var gold = 100
 export var factor = 1.0
 export var death_sfx = "1"

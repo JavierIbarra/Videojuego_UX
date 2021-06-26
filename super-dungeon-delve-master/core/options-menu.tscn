@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://core/start-menu.gd" type="Script" id=1]
-[ext_resource path="res://assets/splash/title.png" type="Texture" id=2]
+[ext_resource path="res://core/options-menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/misc/potion.png" type="Texture" id=2]
 [ext_resource path="res://resources/font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://assets/ui/pointer.png" type="Texture" id=4]
-[ext_resource path="res://assets/music/cinematic/dungeon_delve_cinematic.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/misc/coin.png" type="Texture" id=6]
-[ext_resource path="res://assets/misc/potion.png" type="Texture" id=7]
-[ext_resource path="res://assets/misc/chest.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/player/new/knight_m_idle_anim_f0.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/player/new/knight_m_idle_anim_f0.png" type="Texture" id=4]
+[ext_resource path="res://assets/misc/chest.png" type="Texture" id=5]
+[ext_resource path="res://assets/music/cinematic/dungeon_delve_cinematic.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/splash/boot.png" type="Texture" id=7]
+[ext_resource path="res://assets/misc/coin.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/pointer.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "selected"
@@ -47,31 +47,25 @@ __meta__ = {
 }
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( -305.797, 215.559 )
+modulate = Color( 0.25098, 0.247059, 0.247059, 1 )
+position = Vector2( -305.797, 213.559 )
 scale = Vector2( 1.207, 1.165 )
-texture = ExtResource( 2 )
+texture = ExtResource( 7 )
 centered = false
 offset = Vector2( 253.418, -242.592 )
-
-[node name="version" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label0" type="Label" parent="."]
 light_mask = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 777.696
-margin_top = -381.0
-margin_right = 1399.7
-margin_bottom = -256.0
+margin_left = 779.696
+margin_top = -892.0
+margin_right = 1401.7
+margin_bottom = -767.0
 rect_scale = Vector2( 0.8, 0.8 )
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
-text = "Enter Dungeon"
+text = "Difficulty"
 valign = 1
 max_lines_visible = 1
 __meta__ = {
@@ -84,13 +78,13 @@ anchor_left = -3.17891e-08
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 774.332
-margin_top = -258.231
+margin_top = -632.231
 margin_right = 1396.34
-margin_bottom = -133.231
+margin_bottom = -507.231
 rect_scale = Vector2( 0.8, 0.8 )
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
-text = "Options"
+text = "Statistic"
 valign = 1
 max_lines_visible = 1
 __meta__ = {
@@ -102,13 +96,13 @@ light_mask = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 777.696
-margin_top = -146.0
-margin_right = 959.696
-margin_bottom = -20.0
+margin_top = -391.0
+margin_right = 976.696
+margin_bottom = -265.0
 rect_scale = Vector2( 0.8, 1 )
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
-text = "Exit"
+text = "Back"
 valign = 1
 max_lines_visible = 1
 __meta__ = {
@@ -116,33 +110,33 @@ __meta__ = {
 }
 
 [node name="pointer" type="Sprite" parent="."]
-position = Vector2( 690, 897 )
+position = Vector2( 690, 529 )
 scale = Vector2( 6.125, 6.125 )
-texture = ExtResource( 4 )
+texture = ExtResource( 9 )
 offset = Vector2( 0, -3 )
 
 [node name="knight" type="Sprite" parent="."]
-position = Vector2( 284.572, 718 )
+position = Vector2( 290.572, 718 )
 scale = Vector2( 16.571, 16.571 )
-texture = ExtResource( 24 )
+texture = ExtResource( 4 )
 
 [node name="coin" type="Sprite" parent="."]
 position = Vector2( 1721.5, 757.5 )
 scale = Vector2( 13.687, 13.687 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 
 [node name="potion" type="Sprite" parent="."]
 position = Vector2( 1701.5, 902 )
 scale = Vector2( 13.687, 13.687 )
-texture = ExtResource( 7 )
+texture = ExtResource( 2 )
 
 [node name="chest" type="Sprite" parent="."]
 position = Vector2( 1551, 818 )
 scale = Vector2( 11.125, 11.125 )
-texture = ExtResource( 8 )
+texture = ExtResource( 5 )
 
 [node name="TitleMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 volume_db = -18.01
 autoplay = true
 bus = "Reverb"

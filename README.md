@@ -12,6 +12,8 @@
 * Cambio color posiones
 * Nuevas Armas
 * Nueva skin personaje principal
+* Ataque Jefe final
+* Menu con cambio de dificultad
 
 
 ## Controles

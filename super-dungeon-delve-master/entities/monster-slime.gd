@@ -8,7 +8,7 @@ func _ready():
 	$Particles2D.modulate = Color("97da3f")
 	$SfxDeath.stream = load("res://assets/sfx/squish.wav")
 	
-	health = 15 
+	health = 15 * (globals.difficulty * 0.1)
 	gold = 10
 	death_sfx = "3"
 	speed = rand_range(20, 60)

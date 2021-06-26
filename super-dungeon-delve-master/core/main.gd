@@ -54,6 +54,10 @@ func start_level():
 	# Remove existing monsters (if any)
 	for monster in get_tree().get_nodes_in_group("monsters"):
 		remove_child(monster)
+		
+	# Remove existing innkeeper (if any)
+	for innkeeper in get_tree().get_nodes_in_group("innkeeper"):
+		remove_child(innkeeper)
 	
 	# Move player to a randomly selected start room
 	var start_room = globals.map.all_rooms[randi() % len(globals.map.all_rooms)]

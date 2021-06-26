@@ -6,10 +6,11 @@ const RUN_AWAY_TIME = 0.7
 func _ready():
 	$AudioMonsterGoblin.play()
 	$AnimatedSprite.animation = "goblin"
-	health = 18 
+	health = 18 * (globals.difficulty * 0.1)
 	gold = 20
 	speed = 20.0 + randf() * 30.0
 	_base_speed = speed
+	print(health)
 	$Particles2D.modulate = Color("3d734f")
 	$SfxDeath.stream = load("res://assets/sfx/death.wav")
 
