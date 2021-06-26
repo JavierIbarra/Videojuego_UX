@@ -10,7 +10,6 @@ func _ready():
 	gold = 20
 	speed = 20.0 + randf() * 30.0
 	_base_speed = speed
-	print(health)
 	$Particles2D.modulate = Color("3d734f")
 	$SfxDeath.stream = load("res://assets/sfx/death.wav")
 

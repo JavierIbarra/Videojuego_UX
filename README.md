@@ -13,11 +13,12 @@
 * Nuevas Armas
 * Nueva skin personaje principal
 * Ataque Jefe final
-* Menu con cambio de dificultad
-
+* Menu con selector de dificultad
+* Nuevas armas con diferente velocidad y alcance
+* Tienda de armas (faltan pagos) 
 
 ## Controles
 
 * Atacar: Ctrl / Z / Space
 * Cerrar dialogo: Enter / Kp Enter / Space  
-* Cambiar skin personaje principal: I
+* Tienda: I

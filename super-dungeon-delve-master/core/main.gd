@@ -8,7 +8,7 @@ const SCENE_PLAYER = preload("res://entities/player.tscn")
 const SCENE_MAP = preload("res://core/map.tscn")
 const SCENE_INNKEEPER = preload("res://entities/Innkeeper.tscn")
 const SCENE_DIALOG = preload("res://core/dialog.tscn")
-
+const SCENE_STORE = preload("res://core/store.tscn")
 
 func _ready():
 	randomize()
@@ -159,4 +159,7 @@ func new_load():
 	var dialogo = SCENE_DIALOG.instance()
 	if dialogo.exist():
 		$"HUD".add_child(dialogo)
-	
+
+func store():
+	var store = SCENE_STORE.instance()
+	$"HUD".add_child(store)	

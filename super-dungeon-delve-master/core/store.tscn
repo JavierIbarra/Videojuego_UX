@@ -1,12 +1,51 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/efx/muralla.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/player/weapons/hammer.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/player/weapons/spear.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/player/weapons/sword.png" type="Texture" id=4]
+[ext_resource path="res://assets/misc/coin.png" type="Texture" id=5]
+[ext_resource path="res://resources/font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://core/store.gd" type="Script" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "selected"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.972549, 0.364706, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "selected"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.972549, 0.364706, 0, 1 ) ]
+}
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.41418
 margin_right = 1.41418
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -20,3 +59,89 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 688.0
+margin_top = 162.0
+margin_right = 1222.0
+margin_bottom = 808.0
+color = Color( 0.145098, 0.0745098, 0.101961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoldLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -356.0
+margin_top = 22.0
+margin_right = 85.0
+margin_bottom = 147.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 6 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="golden" type="Sprite" parent="GoldLabel"]
+position = Vector2( 512.612, 57.762 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 5 )
+
+[node name="Label1" type="Label" parent="."]
+modulate = Color( 0.972549, 0.364706, 0, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -1414.0
+margin_top = 852.0
+margin_right = -973.0
+margin_bottom = 977.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 6 )
+text = "Back"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -780.0
+margin_top = 852.0
+margin_right = -339.0
+margin_bottom = 977.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 6 )
+text = "Select"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 955.615, 522.844 )
+scale = Vector2( 15, 15 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 955.615, 522.844 )
+scale = Vector2( 15, 15 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 955.615, 522.844 )
+scale = Vector2( 15, 15 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/selected = SubResource( 1 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/selected = SubResource( 2 )

@@ -10,3 +10,4 @@ var kills = 0
 var skin = 0
 var difficulty = 10
 var weapons = "hammer"
+var n_weapons = 1

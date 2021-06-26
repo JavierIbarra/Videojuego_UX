@@ -82,10 +82,11 @@ func _physics_process(delta: float):
 			_attack(spear)
 			
 	if Input.is_action_just_pressed("inventario") :
-		if globals.skin == 1:
-			globals.skin = 0
-		else:
-			globals.skin = 1
+		#if globals.skin == 1:
+		#	globals.skin = 0
+		#else:
+		#	globals.skin = 1
+		$"/root/Main".store()
 #
 #
 func _get_direction() -> Vector2:
