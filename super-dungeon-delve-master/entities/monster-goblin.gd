@@ -5,7 +5,9 @@ const RUN_AWAY_TIME = 0.7
 
 func _ready():
 	$AudioMonsterGoblin.play()
-	$AnimatedSprite.animation = "goblin"
+	$AnimatedSprite.animation = "goblin2"
+	$AnimatedSprite.scale.x = 0.7
+	$AnimatedSprite.scale.y = 0.7
 	health = 18 * (globals.difficulty * 0.1)
 	gold = 20
 	speed = 20.0 + randf() * 30.0
