@@ -71,13 +71,13 @@ func _physics_process(delta: float):
 
 	# Attack
 	if Input.is_action_just_pressed("attack") and _attack_cooldown <= 0.001:
-		if globals.weapons == "hammer":
+		if globals.n_weapons == 1:
 			var hammer: = WEAPON_HAMMER.instance()
 			_attack(hammer)
-		elif globals.weapons == "sword":
+		elif globals.n_weapons == 2:
 			var sword: = WEAPON_SWORD.instance()
 			_attack(sword)
-		elif globals.weapons == "spear":
+		elif globals.n_weapons == 3:
 			var spear: = WEAPON_SPEAR.instance()
 			_attack(spear)
 			
@@ -86,8 +86,10 @@ func _physics_process(delta: float):
 		#	globals.skin = 0
 		#else:
 		#	globals.skin = 1
+		$"/root/Main".inventario()
+#	
+	if Input.is_action_just_pressed("store") :
 		$"/root/Main".store()
-#
 #
 func _get_direction() -> Vector2:
 	var new_dir: = Vector2(
