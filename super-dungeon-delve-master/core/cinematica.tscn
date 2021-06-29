@@ -39,7 +39,7 @@
 [ext_resource path="res://assets/cinematic/girl town/bad_aura.wav" type="AudioStream" id=37]
 [ext_resource path="res://assets/cinematic/girl town/3_days_later.png" type="Texture" id=38]
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=1]
 resource_name = "3_days"
 length = 2.0
 tracks/0/type = "value"
@@ -55,8 +55,7 @@ tracks/0/keys = {
 "values": [ false, true, false ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "Dungeon"
+[sub_resource type="Animation" id=2]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Cinematic/Dungeon_entrance:visible")
@@ -109,7 +108,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "Girl Dungeon"
 length = 6.0
 tracks/0/type = "value"
@@ -323,8 +322,7 @@ tracks/17/keys = {
 "values": [ Vector2( 1.60409, 2.9109 ), Vector2( 1.60409, 2.9109 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Girl Room"
+[sub_resource type="Animation" id=4]
 length = 9.0
 step = 0.05
 tracks/0/type = "value"
@@ -397,7 +395,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 75.7885, -3.59053 ) ]
+"values": [ Vector2( 60.6858, -3.08711 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Cinematic/girl room/s_girl:visible")
@@ -433,7 +431,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1478.44, 514.925 ), Vector2( 1573.29, 501.456 ) ]
+"values": [ Vector2( 1365.18, 518.7 ), Vector2( 1447.29, 501.456 ) ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Cinematic/girl room/dark:visible")
@@ -493,7 +491,7 @@ tracks/13/keys = {
 "times": PoolRealArray( 6.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1573.86, 482.852 ) ]
+"values": [ Vector2( 1447.29, 482.852 ) ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Cinematic/girl room/sp_girl:visible")
@@ -674,7 +672,7 @@ tracks/28/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "Girl Town"
 length = 5.0
 tracks/0/type = "value"
@@ -844,7 +842,7 @@ tracks/13/keys = {
 "values": [ -9.563, -2.391 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=6]
 length = 6.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Cinematic/Town:position")
@@ -897,7 +895,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=7]
 length = 10.0
 step = 0.05
 tracks/0/type = "value"
@@ -1083,7 +1081,7 @@ tracks/14/keys = {
 "times": PoolRealArray( 0.05 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=8]
 length = 6.0
 step = 0.05
 tracks/0/type = "value"
@@ -1278,14 +1276,14 @@ __meta__ = {
 }
 
 [node name="Cinematic" type="AnimationPlayer" parent="."]
-anims/3_days = SubResource( 8 )
-anims/Dungeon = SubResource( 1 )
-"anims/Girl Dungeon" = SubResource( 7 )
-"anims/Girl Room" = SubResource( 2 )
-"anims/Girl Town" = SubResource( 6 )
-anims/Pueblo = SubResource( 3 )
-anims/Taverna = SubResource( 4 )
-anims/knight_town = SubResource( 5 )
+anims/3_days = SubResource( 1 )
+anims/Dungeon = SubResource( 2 )
+"anims/Girl Dungeon" = SubResource( 3 )
+"anims/Girl Room" = SubResource( 4 )
+"anims/Girl Town" = SubResource( 5 )
+anims/Pueblo = SubResource( 6 )
+anims/Taverna = SubResource( 7 )
+anims/knight_town = SubResource( 8 )
 
 [node name="background" type="Sprite" parent="Cinematic"]
 position = Vector2( 942.84, 544.448 )
@@ -1435,7 +1433,7 @@ volume_db = -2.391
 
 [node name="room" type="Sprite" parent="Cinematic/girl room"]
 position = Vector2( 763.608, 564.542 )
-scale = Vector2( 8.5, 8.5 )
+scale = Vector2( 7.49964, 7.49964 )
 texture = ExtResource( 13 )
 
 [node name="carpet" type="Sprite" parent="Cinematic/girl room/room"]
@@ -1444,17 +1442,17 @@ scale = Vector2( 1.05173, 1.05173 )
 texture = ExtResource( 25 )
 
 [node name="Muebles" type="Sprite" parent="Cinematic/girl room/room"]
-position = Vector2( 75.7885, -3.59053 )
+position = Vector2( 60.6858, -3.08711 )
 texture = ExtResource( 24 )
 
 [node name="s_girl" type="Sprite" parent="Cinematic/girl room"]
-position = Vector2( 1573.29, 501.456 )
-scale = Vector2( 9, 9 )
+position = Vector2( 1365.18, 518.7 )
+scale = Vector2( 7.49964, 7.49964 )
 texture = ExtResource( 26 )
 
 [node name="sp_girl" type="Sprite" parent="Cinematic/girl room"]
 visible = false
-position = Vector2( 1573.86, 482.852 )
+position = Vector2( 1447.29, 482.852 )
 scale = Vector2( 9, 9 )
 texture = ExtResource( 28 )
 
@@ -1470,11 +1468,13 @@ scale = Vector2( 1.00943, 1.00943 )
 texture = ExtResource( 26 )
 
 [node name="silhouette" type="Sprite" parent="Cinematic/girl room"]
+visible = false
 position = Vector2( 315.019, 191.529 )
 scale = Vector2( 8.52416, 8.49594 )
 texture = ExtResource( 30 )
 
 [node name="window" type="Sprite" parent="Cinematic/girl room"]
+visible = false
 position = Vector2( 309.263, 207.731 )
 scale = Vector2( 8.52416, 8.49594 )
 texture = ExtResource( 29 )
