@@ -19,7 +19,7 @@ func _ready():
 	
 func _process(delta):
 	
-	if Input.is_action_just_pressed("back"):
+	if Input.is_action_just_pressed("ui_cancel"):
 		queue_free()
 		get_tree().paused = false
 		$"/root/Main/HUD/HealthBar".value = globals.player.health

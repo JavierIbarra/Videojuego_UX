@@ -22,5 +22,4 @@
 * Atacar: Ctrl / Z / Space
 * Cerrar dialogo: Enter / Kp Enter / Space  
 * Inventario: I
-* Tienda: O
-* Salir tienda: P
+* Salir tienda: ESC
