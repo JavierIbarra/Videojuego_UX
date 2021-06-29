@@ -47,7 +47,7 @@ func _process(delta):
 		get_node("Weapon"+str(weapon)).color = Color("f85d00")
 		
 	if Input.is_action_just_pressed("ui_accept"):
-		if weapon > 0 and weapon < largo:
+		if weapon > 0 and weapon <= largo:
 			comprar(weapon)
 		else:
 			heal(10)
