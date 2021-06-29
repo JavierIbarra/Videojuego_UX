@@ -53,19 +53,14 @@ animations = [ {
 "name": "walk_new",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 32 ) ],
-"loop": true,
-"name": "up_new",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 18 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "hit",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 15 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 32 ) ],
 "loop": true,
-"name": "down",
+"name": "up_new",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 31 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
@@ -73,20 +68,25 @@ animations = [ {
 "name": "idle_new",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 9 ), ExtResource( 15 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 25 ), ExtResource( 22 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "down_new",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "hit_new",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 7.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "hit_new",
-"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -107,7 +107,7 @@ position = Vector2( 8, 8 )
 z_index = 10
 frames = SubResource( 1 )
 animation = "walk_new"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -153,6 +153,8 @@ bus = "Reverb"
 [node name="SfxPain" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [node name="SfxSwipe" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )
 
@@ -172,6 +174,7 @@ texture = ExtResource( 11 )
 mode = 3
 range_item_cull_mask = 2
 shadow_enabled = true
+
 [connection signal="frame_changed" from="Sprite" to="." method="_on_Sprite_frame_changed"]
 [connection signal="timeout" from="Light2D/LightTimer" to="." method="_on_LightTimer_timeout"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

@@ -80,7 +80,7 @@ func start_level():
 	add_child(exit)
 	
 	# Ultimo nivel Jefe Final
-	if globals.depth == 12:
+	if globals.depth == 1:
 		var monster: KinematicBody2D
 		monster = SCENE_MONSTER.instance()
 		monster.set_script(preload("res://entities/monster-boss.gd"))

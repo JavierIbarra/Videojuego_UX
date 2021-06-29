@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Owl.mp3-8548ed8c17a64d77a63b4b1a4c8909fa.mp3str"
+
+[deps]
+
+source_file="res://assets/cinematic/girl town/Owl.mp3"
+dest_files=[ "res://.import/Owl.mp3-8548ed8c17a64d77a63b4b1a4c8909fa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

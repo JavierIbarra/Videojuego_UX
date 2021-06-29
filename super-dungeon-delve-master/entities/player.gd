@@ -145,7 +145,7 @@ func _on_Hitbox_body_entered(body: KinematicBody2D):
 func _on_Sprite_frame_changed():
 	_step = not _step
 	if not _step: return
-	if $Sprite.animation == "walk":
+	if $Sprite.animation == "walk_new" or $Sprite.animation == "up_new" or $Sprite.animation == "down_new":
 		$SfxFootstep.volume_db = rng.randf_range(-20.0, -10.0)
 		$SfxFootstep.pitch_scale = rng.randf_range(0.7, 1.3)
 		$SfxFootstep.play(0.0)

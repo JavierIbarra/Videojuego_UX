@@ -3,6 +3,14 @@ extends Control
 onready var player = get_node("Cinematic")
 
 func _ready():
+	player.play("Girl Room")
+	yield(player, "animation_finished")
+	player.play("Girl Town")
+	yield(player, "animation_finished")
+	player.play("Girl Dungeon")
+	yield(player, "animation_finished")
+	player.play("3_days")
+	yield(player, "animation_finished")
 	player.play("Taverna")
 	yield(player, "animation_finished")
 	player.play("Pueblo")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://assets/cinematic/Town/Town.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/player/weapon_red_gem_sword.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/cinematic/tavern/Table.png" type="Texture" id=10]
 [ext_resource path="res://assets/cinematic/tavern/Help.png" type="Texture" id=11]
 [ext_resource path="res://core/cinematica.gd" type="Script" id=12]
+[ext_resource path="res://assets/cinematic/girl room/room.png" type="Texture" id=13]
 [ext_resource path="res://assets/cinematic/tavern/Tabern_background-taberner.png" type="Texture" id=14]
 [ext_resource path="res://background.png" type="Texture" id=15]
 [ext_resource path="res://assets/cinematic/tavern/knight_beer.png" type="Texture" id=16]
@@ -22,6 +23,37 @@
 [ext_resource path="res://assets/cinematic/tavern/Picture1.png" type="Texture" id=21]
 [ext_resource path="res://assets/sfx/cinematic/town_attack_knight.wav" type="AudioStream" id=22]
 [ext_resource path="res://assets/sfx/cinematic/dungeon_entrance.wav" type="AudioStream" id=23]
+[ext_resource path="res://assets/cinematic/girl room/Muebles.png" type="Texture" id=24]
+[ext_resource path="res://assets/cinematic/girl room/carpet.png" type="Texture" id=25]
+[ext_resource path="res://assets/cinematic/girl room/s_girl.png" type="Texture" id=26]
+[ext_resource path="res://assets/cinematic/girl room/dark.png" type="Texture" id=27]
+[ext_resource path="res://assets/cinematic/girl room/sp_girl.png" type="Texture" id=28]
+[ext_resource path="res://assets/cinematic/girl room/window.png" type="Texture" id=29]
+[ext_resource path="res://assets/cinematic/girl room/silhouette.png" type="Texture" id=30]
+[ext_resource path="res://assets/cinematic/girl room/night1.mp3" type="AudioStream" id=31]
+[ext_resource path="res://assets/cinematic/girl town/shadow.png" type="Texture" id=32]
+[ext_resource path="res://assets/cinematic/girl town/night_town.png" type="Texture" id=33]
+[ext_resource path="res://assets/cinematic/girl room/p_girl.png" type="Texture" id=34]
+[ext_resource path="res://assets/cinematic/girl town/Owl.mp3" type="AudioStream" id=35]
+[ext_resource path="res://assets/cinematic/girl room/d_girl.wav" type="AudioStream" id=36]
+[ext_resource path="res://assets/cinematic/girl town/bad_aura.wav" type="AudioStream" id=37]
+[ext_resource path="res://assets/cinematic/girl town/3_days_later.png" type="Texture" id=38]
+
+[sub_resource type="Animation" id=8]
+resource_name = "3_days"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cinematic/girl dungeon/3_days_later:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "Dungeon"
@@ -77,8 +109,742 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 )
 }
 
+[sub_resource type="Animation" id=7]
+resource_name = "Girl Dungeon"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cinematic/girl dungeon/Dungeon_entrance:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cinematic/girl dungeon/dark:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cinematic/girl dungeon/dark:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 910.822, 506.18 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Cinematic/girl dungeon/dark:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 65.0295, 66.649 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Cinematic/girl dungeon/shadow/p_girl:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.196854, -48.3731 ), Vector2( 0.197, -40.562 ), Vector2( 0.197, -48.373 ), Vector2( 0.197, -40.562 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Cinematic/girl dungeon/shadow:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 670.079, 569.322 ), Vector2( 1154.48, 574.322 ), Vector2( 1068.16, 885.192 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Cinematic/girl dungeon/Dungeon_entrance:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 917.081, 551.697 ), Vector2( 917.081, 551.697 ), Vector2( 642.419, 367.748 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Cinematic/girl dungeon/Dungeon_entrance:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 3.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.03492, 6.03492 ), Vector2( 6.03492, 6.03492 ), Vector2( 8, 8 ) ]
+}
+tracks/8/type = "audio"
+tracks/8/path = NodePath("Cinematic/girl room/night_sound")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/9/type = "audio"
+tracks/9/path = NodePath("Cinematic/girl town/owl")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/10/type = "audio"
+tracks/10/path = NodePath("Cinematic/girl town/aura")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Cinematic/girl room/night_sound:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.1, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Cinematic/girl town/owl:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.1, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Cinematic/girl town/aura:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.1, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Cinematic/girl dungeon/shadow:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 3.5, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.25903, 1.80252 ), Vector2( 5.149, 2.983 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Cinematic/girl dungeon/shadow:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Cinematic/girl dungeon/shadow/p_girl:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Cinematic/girl dungeon/shadow/p_girl:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.60409, 2.9109 ), Vector2( 1.60409, 2.9109 ) ]
+}
+
 [sub_resource type="Animation" id=2]
-resource_name = "Pueblo"
+resource_name = "Girl Room"
+length = 9.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cinematic/girl room/room:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cinematic/girl room/room:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 763.608, 564.542 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cinematic/girl room/room:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 7.49964, 7.49964 ), Vector2( 8.5, 8.5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Cinematic/girl room/room/carpet:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Cinematic/girl room/room/Muebles:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Cinematic/girl room/room/Muebles:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 75.7885, -3.59053 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Cinematic/girl room/s_girl:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Cinematic/girl room/s_girl:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 7.49964, 7.49964 ), Vector2( 9, 9 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Cinematic/girl room/s_girl:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1478.44, 514.925 ), Vector2( 1573.29, 501.456 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Cinematic/girl room/dark:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 3.95, 4, 4.05, 4.1, 4.15, 6, 6.1, 6.2, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false, true, false, false, false, false, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Cinematic/girl room/window:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 4.15, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Cinematic/girl room/silhouette:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 4.15, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Cinematic/girl room/sp_girl:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 6.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9, 9 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Cinematic/girl room/sp_girl:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 6.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1573.86, 482.852 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Cinematic/girl room/sp_girl:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 6.2, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Cinematic/girl room/silhouette:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 4.15, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 315.019, 191.529 ), Vector2( 315.019, 191.529 ), Vector2( 315.58, 193.773 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Cinematic/girl room/silhouette:scale")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 4.15 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8.52416, 8.49594 ) ]
+}
+tracks/17/type = "audio"
+tracks/17/path = NodePath("Cinematic/girl room/night_sound")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Cinematic/girl room/night_sound:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 0.1, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Cinematic/girl room/girl_d:playing")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 4.1, 5, 8.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Cinematic/girl room/girl_d:volume_db")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 4.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -7.405 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Cinematic/girl town/aura:playing")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Cinematic/girl town/owl:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Cinematic/girl dungeon/Dungeon_entrance:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Cinematic/girl dungeon/shadow:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Cinematic/girl dungeon/dark:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Cinematic/Tabern_background-taberner:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 9 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Cinematic/knight_beer:visible")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 9 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Cinematic/Town:visible")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 9 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Girl Town"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cinematic/girl town/night_town:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cinematic/girl town/night_town/dark:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cinematic/girl town/night_town/p_girl:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Cinematic/girl town/night_town/shadow:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Cinematic/girl town/night_town:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 342.619, 548.156 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Cinematic/girl town/night_town/dark:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 79.555, 0.664856 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Cinematic/girl town/night_town/shadow:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 64.8384, 8.22452 ), Vector2( 104.838, 8.225 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Cinematic/girl town/night_town/p_girl:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1, 2.4, 3.7, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 65.1856, -4.05684 ), Vector2( 72.749, -2.057 ), Vector2( 84, -4.057 ), Vector2( 94.4, -2.057 ), Vector2( 105.186, -4.057 ) ]
+}
+tracks/8/type = "audio"
+tracks/8/path = NodePath("Cinematic/girl room/night_sound")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Cinematic/girl room/night_sound:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.1, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Cinematic/girl town/owl:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Cinematic/girl town/owl:volume_db")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -9.568 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Cinematic/girl town/aura:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.1, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Cinematic/girl room/night_sound:volume_db")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -9.563, -2.391 ]
+}
+
+[sub_resource type="Animation" id=3]
 length = 6.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Cinematic/Town:position")
@@ -131,7 +897,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 10.0
 step = 0.05
 tracks/0/type = "value"
@@ -147,7 +913,7 @@ tracks/0/keys = {
 "values": [ Vector2( 10, 10 ), Vector2( 15, 15 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Cinematic/Table:position")
+tracks/1/path = NodePath("Cinematic/Tabern_background-taberner/Table:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -159,7 +925,7 @@ tracks/1/keys = {
 "values": [ Vector2( 778.37, 782.92 ), Vector2( 460.646, 880.103 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Cinematic/Table2:position")
+tracks/2/path = NodePath("Cinematic/Tabern_background-taberner/Table2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -171,7 +937,7 @@ tracks/2/keys = {
 "values": [ Vector2( 1579.18, 784.133 ), Vector2( 1878.98, 868.878 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Cinematic/Table2:scale")
+tracks/3/path = NodePath("Cinematic/Tabern_background-taberner/Table2:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -183,7 +949,7 @@ tracks/3/keys = {
 "values": [ Vector2( 10, 10 ), Vector2( 15, 15 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Cinematic/Table:scale")
+tracks/4/path = NodePath("Cinematic/Tabern_background-taberner/Table:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -267,7 +1033,7 @@ tracks/10/keys = {
 "values": [ true, false ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Cinematic/Table:visible")
+tracks/11/path = NodePath("Cinematic/Tabern_background-taberner/Table:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -279,7 +1045,7 @@ tracks/11/keys = {
 "values": [ true, false ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Cinematic/Table2:visible")
+tracks/12/path = NodePath("Cinematic/Tabern_background-taberner/Table2:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -317,7 +1083,7 @@ tracks/14/keys = {
 "times": PoolRealArray( 0.05 )
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 6.0
 step = 0.05
 tracks/0/type = "value"
@@ -512,13 +1278,16 @@ __meta__ = {
 }
 
 [node name="Cinematic" type="AnimationPlayer" parent="."]
+anims/3_days = SubResource( 8 )
 anims/Dungeon = SubResource( 1 )
-anims/Pueblo = SubResource( 2 )
-anims/Taverna = SubResource( 3 )
-anims/knight_town = SubResource( 4 )
+"anims/Girl Dungeon" = SubResource( 7 )
+"anims/Girl Room" = SubResource( 2 )
+"anims/Girl Town" = SubResource( 6 )
+anims/Pueblo = SubResource( 3 )
+anims/Taverna = SubResource( 4 )
+anims/knight_town = SubResource( 5 )
 
 [node name="background" type="Sprite" parent="Cinematic"]
-visible = false
 position = Vector2( 942.84, 544.448 )
 scale = Vector2( 4.34682, 4.16722 )
 texture = ExtResource( 15 )
@@ -571,7 +1340,8 @@ scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 18 )
 
 [node name="Town" type="Sprite" parent="Cinematic"]
-position = Vector2( 692.52, 556.94 )
+visible = false
+position = Vector2( 861.987, 576.706 )
 scale = Vector2( 6.24891, 6.24891 )
 texture = ExtResource( 1 )
 
@@ -600,26 +1370,151 @@ position = Vector2( -79.5915, -11.5601 )
 texture = ExtResource( 5 )
 
 [node name="Tabern_background-taberner" type="Sprite" parent="Cinematic"]
-position = Vector2( 1214.96, 724.492 )
-scale = Vector2( 10, 10 )
+visible = false
+position = Vector2( 1217.48, 724.492 )
+scale = Vector2( 15, 15 )
 texture = ExtResource( 14 )
 
+[node name="Table" type="Sprite" parent="Cinematic/Tabern_background-taberner"]
+position = Vector2( -50.4556, 10.3741 )
+texture = ExtResource( 10 )
+offset = Vector2( -18.8973, 5.46535 )
+
+[node name="Table2" type="Sprite" parent="Cinematic/Tabern_background-taberner"]
+position = Vector2( 44.1, 9.62573 )
+texture = ExtResource( 10 )
+offset = Vector2( -18.8973, 5.46535 )
+
 [node name="knight_beer" type="Sprite" parent="Cinematic"]
-position = Vector2( 1052.3, 577.274 )
-scale = Vector2( 10, 10 )
+visible = false
+position = Vector2( 972.206, 492.633 )
+scale = Vector2( 15, 15 )
 texture = ExtResource( 16 )
 
-[node name="Table" type="Sprite" parent="Cinematic"]
-position = Vector2( 778.37, 782.92 )
-scale = Vector2( 10, 10 )
-texture = ExtResource( 10 )
-offset = Vector2( -18.8973, 5.46535 )
+[node name="girl town" type="Node" parent="Cinematic"]
 
-[node name="Table2" type="Sprite" parent="Cinematic"]
-position = Vector2( 1579.18, 784.133 )
-scale = Vector2( 10, 10 )
-texture = ExtResource( 10 )
-offset = Vector2( -18.8973, 5.46535 )
+[node name="night_town" type="Sprite" parent="Cinematic/girl town"]
+visible = false
+position = Vector2( 342.619, 548.156 )
+scale = Vector2( 7.91135, 7.91135 )
+texture = ExtResource( 33 )
+
+[node name="p_girl" type="Sprite" parent="Cinematic/girl town/night_town"]
+position = Vector2( 105.186, -4.057 )
+scale = Vector2( 0.776423, 0.776423 )
+texture = ExtResource( 34 )
+
+[node name="shadow" type="Sprite" parent="Cinematic/girl town/night_town"]
+position = Vector2( 104.838, 8.225 )
+scale = Vector2( 0.436782, 0.244501 )
+texture = ExtResource( 32 )
+
+[node name="dark" type="Sprite" parent="Cinematic/girl town/night_town"]
+position = Vector2( 79.555, 0.664856 )
+scale = Vector2( 7.9388, 8.27391 )
+texture = ExtResource( 27 )
+
+[node name="owl" type="AudioStreamPlayer" parent="Cinematic/girl town"]
+stream = ExtResource( 35 )
+volume_db = -9.568
+
+[node name="aura" type="AudioStreamPlayer" parent="Cinematic/girl town"]
+stream = ExtResource( 37 )
+volume_db = -9.563
+pitch_scale = 0.86
+
+[node name="girl room" type="Node" parent="Cinematic"]
+
+[node name="girl_d" type="AudioStreamPlayer" parent="Cinematic/girl room"]
+stream = ExtResource( 36 )
+volume_db = -7.405
+
+[node name="night_sound" type="AudioStreamPlayer" parent="Cinematic/girl room"]
+stream = ExtResource( 31 )
+volume_db = -2.391
+
+[node name="room" type="Sprite" parent="Cinematic/girl room"]
+position = Vector2( 763.608, 564.542 )
+scale = Vector2( 8.5, 8.5 )
+texture = ExtResource( 13 )
+
+[node name="carpet" type="Sprite" parent="Cinematic/girl room/room"]
+position = Vector2( -4.29769, 17.7864 )
+scale = Vector2( 1.05173, 1.05173 )
+texture = ExtResource( 25 )
+
+[node name="Muebles" type="Sprite" parent="Cinematic/girl room/room"]
+position = Vector2( 75.7885, -3.59053 )
+texture = ExtResource( 24 )
+
+[node name="s_girl" type="Sprite" parent="Cinematic/girl room"]
+position = Vector2( 1573.29, 501.456 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 26 )
+
+[node name="sp_girl" type="Sprite" parent="Cinematic/girl room"]
+visible = false
+position = Vector2( 1573.86, 482.852 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 28 )
+
+[node name="Muebles" type="Sprite" parent="Cinematic/girl room"]
+visible = false
+position = Vector2( 1310.08, 540.484 )
+scale = Vector2( 7.49964, 7.49964 )
+texture = ExtResource( 24 )
+
+[node name="s_girl" type="Sprite" parent="Cinematic/girl room/Muebles"]
+position = Vector2( 19.3687, -3.27903 )
+scale = Vector2( 1.00943, 1.00943 )
+texture = ExtResource( 26 )
+
+[node name="silhouette" type="Sprite" parent="Cinematic/girl room"]
+position = Vector2( 315.019, 191.529 )
+scale = Vector2( 8.52416, 8.49594 )
+texture = ExtResource( 30 )
+
+[node name="window" type="Sprite" parent="Cinematic/girl room"]
+position = Vector2( 309.263, 207.731 )
+scale = Vector2( 8.52416, 8.49594 )
+texture = ExtResource( 29 )
+
+[node name="dark" type="Sprite" parent="Cinematic/girl room"]
+visible = false
+position = Vector2( 961.56, 544.798 )
+scale = Vector2( 66.1882, 65.9691 )
+texture = ExtResource( 27 )
+
+[node name="girl dungeon" type="Node" parent="Cinematic"]
+
+[node name="Dungeon_entrance" type="Sprite" parent="Cinematic/girl dungeon"]
+visible = false
+position = Vector2( 917.081, 551.697 )
+scale = Vector2( 6.03492, 6.03492 )
+texture = ExtResource( 20 )
+
+[node name="shadow" type="Sprite" parent="Cinematic/girl dungeon"]
+visible = false
+position = Vector2( 670.079, 569.322 )
+scale = Vector2( 3.33462, 1.84974 )
+texture = ExtResource( 32 )
+
+[node name="p_girl" type="Sprite" parent="Cinematic/girl dungeon/shadow"]
+position = Vector2( 0.196854, -48.3731 )
+scale = Vector2( 1.60409, 2.9109 )
+texture = ExtResource( 34 )
+
+[node name="dark" type="Sprite" parent="Cinematic/girl dungeon"]
+visible = false
+position = Vector2( 910.822, 506.18 )
+scale = Vector2( 65.0295, 66.649 )
+texture = ExtResource( 27 )
+
+[node name="3_days_later" type="Sprite" parent="Cinematic/girl dungeon"]
+visible = false
+position = Vector2( 975.628, 540.637 )
+scale = Vector2( 1.21641, 1.0382 )
+texture = ExtResource( 38 )
 
 [node name="white" type="Sprite" parent="Cinematic"]
 visible = false
@@ -645,8 +1540,8 @@ stream = ExtResource( 9 )
 
 [node name="Dungeon_entrance" type="Sprite" parent="Cinematic"]
 visible = false
-position = Vector2( 692.897, 557.158 )
-scale = Vector2( 6.22768, 6.22768 )
+position = Vector2( 323.754, -193.446 )
+scale = Vector2( 15, 15 )
 texture = ExtResource( 20 )
 
 [node name="knight_down_1" type="Sprite" parent="Cinematic/Dungeon_entrance"]
