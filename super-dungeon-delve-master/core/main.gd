@@ -8,6 +8,7 @@ const SCENE_PLAYER = preload("res://entities/player.tscn")
 const SCENE_MAP = preload("res://core/map.tscn")
 const SCENE_INNKEEPER = preload("res://entities/Innkeeper.tscn")
 const SCENE_DIALOG = preload("res://core/dialog.tscn")
+const SCENE_INVENTARIO = preload("res://core/inventario.tscn")
 const SCENE_STORE = preload("res://core/store.tscn")
 
 func _ready():
@@ -16,7 +17,8 @@ func _ready():
 	# Start game, add a player and reset globals
 	globals.player = SCENE_PLAYER.instance()
 	globals.depth = 1
-	globals.gold = 0
+	#globals.gold = 0
+	$HUD/GoldLabel.text = str(globals.gold)
 	globals.kills = 0
 	add_child(globals.player)
 	$HUD/HealthBar.value = globals.player.health
@@ -159,6 +161,10 @@ func new_load():
 	var dialogo = SCENE_DIALOG.instance()
 	if dialogo.exist():
 		$"HUD".add_child(dialogo)
+
+func inventario():
+	var inventario = SCENE_INVENTARIO.instance()
+	$"HUD".add_child(inventario)	
 
 func store():
 	var store = SCENE_STORE.instance()

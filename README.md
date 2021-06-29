@@ -15,10 +15,12 @@
 * Ataque Jefe final
 * Menu con selector de dificultad
 * Nuevas armas con diferente velocidad y alcance
-* Tienda de armas (faltan pagos) 
+* Tienda de armas y posiones
 
 ## Controles
 
 * Atacar: Ctrl / Z / Space
 * Cerrar dialogo: Enter / Kp Enter / Space  
-* Tienda: I
+* Inventario: I
+* Tienda: O
+* Salir tienda: P

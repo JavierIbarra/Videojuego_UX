@@ -83,10 +83,25 @@ animations = [ {
 "name": "hit_new",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "up_new",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "hit_new",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "walk_new",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -107,7 +122,7 @@ position = Vector2( 8, 8 )
 z_index = 10
 frames = SubResource( 1 )
 animation = "walk_new"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

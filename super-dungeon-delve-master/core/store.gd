@@ -1,77 +1,82 @@
 extends Control
 
-const OPT_WEAPONS = 1
-const OPT_LABEL = 2
+var weapon = 1
 
-const OPT_BACK = 1
-const OPT_SELECT = 2
+var largo = 0
+var old_weapon = 0
 
-var _selected = 1
-var _old_selected = 2
-var _old = 0
-
-var _level_selected = 1
-var _old_level_selected = 2
-var _old_level = 0
-
-var weapon = globals.n_weapons
-var weapons = {1: "hammer", 2: "sword", 3: "spear"}
+# globals.weapòns = {1 : [nombre, precio, activo]}
 
 func _ready():
-	$ColorRect.visible = true
-	$GoldLabel.text = str(globals.gold) 
+	get_tree().paused = true
+	$ProgressBar.value = globals.player.health
+	largo = len(globals.weapons)
+	$GoldLabel.text = str(globals.gold)
+	for numero in range(1,largo+1):
+		get_node("Weapon"+str(numero)+"/valor"+str(numero)).text = str(globals.weapons[numero][1])
+		if globals.weapons[numero][2] == false:
+			get_node("Weapon"+str(numero)+"/Sprite"+str(numero)).modulate = Color("3c3c3c")
 	
 func _process(delta):
-	$Sprite1.hide()
-	$Sprite2.hide()
-	$Sprite3.hide()
-	get_node("Sprite"+ str(weapon)).visible = true
-		
+	
+	if Input.is_action_just_pressed("back"):
+		queue_free()
+		get_tree().paused = false
+		$"/root/Main/HUD/HealthBar".value = globals.player.health
+		$"/root/Main/HUD/GoldLabel".text = str(globals.gold)
+	
 	if Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_up"):
-		_old_level = _level_selected
-		_level_selected = _old_level_selected
-		_old_level_selected = _old_level
+		pass
 		
-	if _level_selected == OPT_WEAPONS:
-		$ColorRect.visible = true
-		$AnimationPlayer.stop()
-		$AnimationPlayer2.stop()
-		$Label1.modulate = Color.white
-		$Label2.modulate = Color.white
+	if Input.is_action_just_pressed("ui_left"):
+		old_weapon = weapon
+		weapon -= 1
+		if weapon < 1:
+			weapon = largo+1
+		get_node("Weapon"+str(old_weapon)).color = Color("25131a")
+		get_node("Weapon"+str(weapon)).color = Color("f85d00")
 		
-		if Input.is_action_just_pressed("ui_right"):
-			weapon += 1
-			if weapon > 3:
-				weapon = 1
+		pass
 		
-		if Input.is_action_just_pressed("ui_left"):
-			weapon -= 1
-			if weapon < 1:
-				weapon = 3
+	if Input.is_action_just_pressed("ui_right"):
+		old_weapon = weapon
+		weapon += 1
+		if weapon > largo+1:
+			weapon = 1
+		get_node("Weapon"+str(old_weapon)).color = Color("25131a")
+		get_node("Weapon"+str(weapon)).color = Color("f85d00")
 		
+	if Input.is_action_just_pressed("ui_accept"):
+		if weapon > 0 and weapon < largo:
+			comprar(weapon)
+		else:
+			heal(10)
 		
+func comprar(weapon):
+	if globals.gold >= globals.weapons[weapon][1]:
+		globals.gold -= globals.weapons[weapon][1]
+		globals.weapons[weapon][1] = 0
+		$GoldLabel.text = str(globals.gold)
+		get_node("Weapon"+str(weapon)+"/valor"+str(weapon)).text = str(globals.weapons[weapon][1])
+		get_node("Weapon"+str(weapon)+"/Sprite"+str(weapon)).modulate = Color("ffffff")
+		globals.weapons[weapon][2] = true
 		
+	else:
+		# faltan monedas (implentar sonido y un color rojo que señale la que faltan monedas
+		$AnimationPlayer.play("golden")
+
+func heal(ammount: int):
+	if globals.gold >= 1000 and globals.player.health < 100:
+		globals.gold -= 1000
+		globals.player.health = min(globals.player.health + ammount, 100)
+		if globals.player.health > 20:
+			$"/root/Main/CanvasModulate".set_color(Color(0.57,0.57,0.57))
 			
-	if _level_selected == OPT_LABEL:
-		#$AnimationPlayer.play("selected")
-		$ColorRect.visible = false
-		if Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right"):
-			_old = _selected
-			_selected = _old_selected
-			_old_selected =  _old
-				
-		if _selected == OPT_BACK:
-			$AnimationPlayer2.stop()
-			$Label2.modulate = Color.white
-			$AnimationPlayer.play("selected")
-					
-		if _selected == OPT_SELECT:
-			$AnimationPlayer.stop()
-			$Label1.modulate = Color.white
-			$AnimationPlayer2.play("selected")
-			
-			if Input.is_action_just_pressed("ui_accept"):
-				globals.weapons = weapons[weapon] 
-				globals.n_weapons = weapon
-				queue_free()
-			
+		$ProgressBar.value = globals.player.health	
+		$ProgressBar.theme
+		$GoldLabel.text = str(globals.gold)
+		
+		#$"/root/Main/HUD/HealthBar/AnimationPlayer".play("blink")
+	else:
+		$AnimationPlayer.play("golden")
+	
