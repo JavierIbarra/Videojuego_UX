@@ -106,7 +106,6 @@ pitch_scale = 0.86
 bus = "Reverb"
 
 [node name="Label1" type="Label" parent="."]
-visible = false
 margin_left = 69.4823
 margin_top = 136.979
 margin_right = 183.482
@@ -119,7 +118,6 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
-visible = false
 margin_left = 68.4088
 margin_top = 50.1072
 margin_right = 206.409
@@ -132,7 +130,6 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( 46.3603, 78.825 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 5 )

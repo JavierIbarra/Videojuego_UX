@@ -13,14 +13,14 @@ animations = [ {
 "name": "static",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "hija 2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "hija 1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "hija 2",
 "speed": 5.0
 } ]
 
@@ -48,4 +48,5 @@ position = Vector2( -4.75952, -5.69593 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 4.72308, 5.7986 )
 shape = SubResource( 2 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

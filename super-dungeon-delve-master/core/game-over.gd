@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	$ScoresLabel.text = "Depth:  " + str(globals.depth * 100) + "ft\nGold:  " + str(globals.gold) + "\nKills:  " + str(globals.kills)
-	#reiniciar_globales()
+	reiniciar_globales()
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_cancel"):

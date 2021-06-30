@@ -10,10 +10,10 @@ func _ready():
 		$AnimatedSprite.play("static")
 		
 func _physics_process(delta):
-	if globals.mostrado:
-		$AnimatedSprite.hide()
 		
 	if globals.final_boss == globals.depth:
+		if globals.mostrado:
+			$AnimatedSprite.hide()
 		if get_tree().get_nodes_in_group("monsters") == []:
 			$AnimatedSprite.show()
 			$AnimatedSprite.play("hija 2")

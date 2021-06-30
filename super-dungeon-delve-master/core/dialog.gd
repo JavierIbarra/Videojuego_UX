@@ -14,11 +14,17 @@ var select = 1
 
 
 func _ready():
+	if globals.final_boss == globals.depth:
+		$Label1.hide()
+		$Label2.hide()
+		$Sprite.hide()
+		load_dialog()	
+	
 	$RichTextLabel.bbcode_text = ''
 	dialog[globals.final_boss] = ['Joe Frames: Ayudame a acabar con el!! Solo eso puede romper el hechizo que lanzo a mi hija!!']
 	if globals.dead_boss:
 		dialog[globals.final_boss] = ['Joe Frames: Gracias por ayudarme a salvar a mi hija']
-	load_dialog()	
+	
 	
 func _process(delta):
 	$next.visible = finished
