@@ -1366,6 +1366,7 @@ position = Vector2( -79.5915, -11.5601 )
 texture = ExtResource( 5 )
 
 [node name="Tabern_background-taberner" type="Sprite" parent="Cinematic"]
+visible = false
 position = Vector2( 1217.48, 724.492 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 14 )
@@ -1383,6 +1384,7 @@ texture = ExtResource( 10 )
 offset = Vector2( -18.8973, 5.46535 )
 
 [node name="knight_beer" type="Sprite" parent="Cinematic"]
+visible = false
 position = Vector2( 1052.3, 577.274 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 16 )

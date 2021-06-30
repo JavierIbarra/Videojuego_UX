@@ -66,6 +66,12 @@ func start_level():
 	var player_cell = globals.map.get_random_floor_cell(start_room["left"], start_room["top"], start_room["width"], start_room["height"])
 	globals.player.position.x = player_cell.x * globals.GRID_SIZE
 	globals.player.position.y = player_cell.y * globals.GRID_SIZE
+	
+	if globals.depth == globals.final_boss:
+		var innkeeper = SCENE_INNKEEPER.instance()		
+		innkeeper.position.x = globals.player.position.x 
+		innkeeper.position.y = globals.player.position.y
+		add_child(innkeeper)
 
 	# Place exit in randomly selected start room
 	var exit = SCENE_EXIT.instance()

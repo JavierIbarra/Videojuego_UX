@@ -15,32 +15,41 @@ var select = 1
 
 func _ready():
 	$RichTextLabel.bbcode_text = ''
-	get_tree().paused = true
-
+	dialog[globals.final_boss] = ['Joe Frames: Ayudame a acabar con el!! Solo eso puede romper el hechizo que lanzo a mi hija!!']
+	if globals.dead_boss:
+		dialog[globals.final_boss] = ['Joe Frames: Gracias por ayudarme a salvar a mi hija']
+	load_dialog()	
 	
 func _process(delta):
 	$next.visible = finished
-	if Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_up"):
-		select *= -1
-		
-		if select == -1:
-			$Sprite.position.y = $Label1.rect_position.y + $Label1.rect_size.y / 2
-		if select == 1:
-			$Sprite.position.y = $Label2.rect_position.y + $Label2.rect_size.y / 2
-			
-	if Input.is_action_just_pressed("ui_accept"):
-		$Label1.hide()
-		$Label2.hide()
-		$Sprite.hide()
-		
-		if select == 1:
+	get_tree().paused = true
+	
+	if globals.final_boss == globals.depth:
+		if Input.is_action_just_pressed("ui_accept"):
 			load_dialog()
-		
-		if select == -1:
-			queue_free()
-			$"/root/Main".store()
+	else:
+		if Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_up"):
+			select *= -1
+			
+			if select == -1:
+				$Sprite.position.y = $Label1.rect_position.y + $Label1.rect_size.y / 2
+			if select == 1:
+				$Sprite.position.y = $Label2.rect_position.y + $Label2.rect_size.y / 2
+				
+		if Input.is_action_just_pressed("ui_accept"):
+			$Label1.hide()
+			$Label2.hide()
+			$Sprite.hide()
+			
+			if select == 1:
+				load_dialog()
+			
+			if select == -1:
+				queue_free()
+				$"/root/Main".store()
 	
 func load_dialog():
+	print (dialog_index, dialog[globals.depth].size())
 	if dialog_index < dialog[globals.depth].size():
 		#get_tree().paused = true
 		finished = false
@@ -55,6 +64,8 @@ func load_dialog():
 	else:
 		queue_free()
 		get_tree().paused = false
+		if globals.depth == globals.final_boss:
+			globals.mostrado = true
 	dialog_index += 1
 
 func _on_Tween_tween_completed(object, key):
@@ -62,7 +73,7 @@ func _on_Tween_tween_completed(object, key):
 	$AudioStreamPlayer.stop()
 
 func exist():
-	if globals.depth in dialog:
+	if globals.depth in dialog or globals.depth == globals.final_boss:
 		return true
 	else:
 		return false
@@ -71,4 +82,3 @@ func eleccion():
 	if Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_up"):
 		select *= -1
 		
-	
