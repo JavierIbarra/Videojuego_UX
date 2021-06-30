@@ -17,9 +17,9 @@ func _ready():
 	
 	
 	$RichTextLabel.bbcode_text = ''
-	dialog[globals.final_boss] = ['Joe Frames: Ayudame a acabar con el!! Solo eso puede romper el hechizo que lanzo a mi hija!!']
+	dialog[globals.final_boss] = ['Joe Frames: Ayudame a acabar con él!! Solo eso puede romper el hechizo que lanzo a mi hija!!']
 	if globals.dead_boss:
-		dialog[globals.final_boss] = ['Joe Frames: Gracias por ayudarme a salvar a mi hija']
+		dialog[globals.final_boss] = ['Joe Frames: Gracias por ayudarme viejo amigo, las pitas de cerveza las invito yo']
 		
 	if globals.final_boss == globals.depth:
 		$Label1.hide()

@@ -157,13 +157,19 @@ func next_level():
 	$SfxExit.play(0.0)
 	globals.depth += 1
 	# IMPORTANT! Use call_deferred to prevent "flushing queries" errors/warnings
-	if globals.depth % 2 == 0:
-		$Musica2.stop()
-		$Music.play()
+	if globals.depth != globals.final_boss:
+		$boss_fight.stop()
+		if globals.depth % 2 == 0:
+			$Musica2.stop()
+			$Music.play()
+		else:
+			$Music.stop()
+			$Musica2.play()
 	else:
 		$Music.stop()
-		$Musica2.play()
-		
+		$Musica2.stop()
+		$boss_fight.play()
+			
 	call_deferred("start_level")
 	
 func new_load():

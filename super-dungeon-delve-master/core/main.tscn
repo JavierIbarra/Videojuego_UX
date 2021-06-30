@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://core/main.gd" type="Script" id=1]
 [ext_resource path="res://resources/theme.tres" type="Theme" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/sfx/ambience_dungeon.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/misc/box.png" type="Texture" id=11]
 [ext_resource path="res://assets/misc/controls.png" type="Texture" id=12]
+[ext_resource path="res://assets/music/final_boss.mp3" type="AudioStream" id=13]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/fonts/LifeCraft_Font.ttf"
@@ -380,3 +381,6 @@ autoplay = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.576471, 0.576471, 0.576471, 1 )
+
+[node name="boss_fight" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
