@@ -19,7 +19,7 @@ func _ready():
 	
 func _process(delta):
 	
-	if Input.is_action_just_pressed("back"):
+	if Input.is_action_just_pressed("ui_cancel"):
 		queue_free()
 		get_tree().paused = false
 		$"/root/Main/HUD/HealthBar".value = globals.player.health
@@ -28,7 +28,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_up"):
 		pass
 		
-	if Input.is_action_just_pressed("ui_left"):
+	if Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_down"):
 		old_weapon = weapon
 		weapon -= 1
 		if weapon < 1:
@@ -38,7 +38,7 @@ func _process(delta):
 		
 		pass
 		
-	if Input.is_action_just_pressed("ui_right"):
+	if Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("ui_up"):
 		old_weapon = weapon
 		weapon += 1
 		if weapon > largo+1:
@@ -47,10 +47,10 @@ func _process(delta):
 		get_node("Weapon"+str(weapon)).color = Color("f85d00")
 		
 	if Input.is_action_just_pressed("ui_accept"):
-		if weapon > 0 and weapon < largo:
+		if weapon > 0 and weapon <= largo:
 			comprar(weapon)
 		else:
-			heal(10)
+			heal(100-globals.player.health)
 		
 func comprar(weapon):
 	if globals.gold >= globals.weapons[weapon][1]:

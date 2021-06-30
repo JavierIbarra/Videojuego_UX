@@ -6,9 +6,9 @@ const SCENE_BONE = preload("res://entities/ball.tscn")
 func _ready():
 	#$AudioMonsterSkel.play()
 	$AnimatedSprite.animation = "boss"
-	health = 100 * (globals.difficulty * 0.1)
+	health = 50 * (globals.difficulty * 0.1)
 	gold = 500
-	damage = 30 * (globals.difficulty * 0.1)
+	damage = 20 * (globals.difficulty * 0.1)
 	death_sfx = "2"
 	$Particles2D.modulate = Color("fdf7ed")
 	$SfxDeath.stream = load("res://assets/sfx/bones.wav")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/efx/muralla.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/player/weapons/hammer.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://core/store.gd" type="Script" id=7]
 [ext_resource path="res://assets/misc/potion.png" type="Texture" id=8]
 [ext_resource path="res://resources/theme.tres" type="Theme" id=9]
+[ext_resource path="res://assets/sprites/innkeeper/tabernero.png" type="Texture" id=10]
+[ext_resource path="res://assets/cinematic/tavern/Taverner.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "golden"
@@ -50,7 +52,9 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -2.37842
 margin_top = -2.0
+margin_right = -2.37842
 margin_bottom = -2.0
 size_flags_horizontal = 3
 texture = ExtResource( 1 )
@@ -239,3 +243,13 @@ rounded = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1377.1, 806.661 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 11 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 737.308, 906.176 )
+scale = Vector2( 15, 15 )
+texture = ExtResource( 10 )

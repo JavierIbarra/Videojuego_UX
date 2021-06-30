@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://dialog.gd" type="Script" id=1]
 [ext_resource path="res://assets/efx/messagebox.png" type="Texture" id=2]
 [ext_resource path="res://assets/ui/next.png" type="Texture" id=3]
 [ext_resource path="res://assets/sfx/SWAV_17.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/ui/puntero.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/fonts/Overlock-Bold.ttf"
@@ -28,6 +29,13 @@ tracks/0/keys = {
 "values": [ Vector2( 1700, 180 ), Vector2( 1700, 160 ) ]
 }
 
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/fonts/Overlock-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 42
+font_data = SubResource( 4 )
+
 [node name="dialog" type="Control"]
 pause_mode = 2
 anchor_left = 0.5
@@ -35,12 +43,11 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -888.0
-margin_top = -368.0
+margin_top = -368.334
 margin_right = 896.0
-margin_bottom = -115.0
+margin_bottom = -115.334
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -59,10 +66,10 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 50.0
-margin_top = 30.0
-margin_right = -100.0
-margin_bottom = -40.0
+margin_left = 54.0562
+margin_top = 29.3701
+margin_right = -95.9438
+margin_bottom = -40.6299
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.329412, 0.309804, 0.309804, 1 )
 bbcode_enabled = true
@@ -97,4 +104,33 @@ stream = ExtResource( 4 )
 volume_db = -21.579
 pitch_scale = 0.86
 bus = "Reverb"
+
+[node name="Label1" type="Label" parent="."]
+margin_left = 69.4823
+margin_top = 136.979
+margin_right = 183.482
+margin_bottom = 188.979
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.329412, 0.309804, 0.309804, 1 )
+text = "Tienda"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 68.4088
+margin_top = 50.1072
+margin_right = 206.409
+margin_bottom = 102.107
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.329412, 0.309804, 0.309804, 1 )
+text = "Historia"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 46.3603, 78.825 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 5 )
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

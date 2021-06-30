@@ -10,20 +10,39 @@ var dialog ={
 var dialog_index = 0
 var finished = false
 var text_speed = 0.01
+var select = 1
 
 
 func _ready():
 	$RichTextLabel.bbcode_text = ''
-	load_dialog()
+	get_tree().paused = true
+
 	
 func _process(delta):
 	$next.visible = finished
+	if Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_up"):
+		select *= -1
+		
+		if select == -1:
+			$Sprite.position.y = $Label1.rect_position.y + $Label1.rect_size.y / 2
+		if select == 1:
+			$Sprite.position.y = $Label2.rect_position.y + $Label2.rect_size.y / 2
+			
 	if Input.is_action_just_pressed("ui_accept"):
-		load_dialog()
+		$Label1.hide()
+		$Label2.hide()
+		$Sprite.hide()
+		
+		if select == 1:
+			load_dialog()
+		
+		if select == -1:
+			queue_free()
+			$"/root/Main".store()
 	
 func load_dialog():
 	if dialog_index < dialog[globals.depth].size():
-		get_tree().paused = true
+		#get_tree().paused = true
 		finished = false
 		$AudioStreamPlayer.play()
 		$RichTextLabel.bbcode_text = dialog[globals.depth][dialog_index]
@@ -47,3 +66,9 @@ func exist():
 		return true
 	else:
 		return false
+
+func eleccion():
+	if Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_up"):
+		select *= -1
+		
+	
