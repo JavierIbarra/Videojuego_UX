@@ -5,7 +5,7 @@ var dialog ={
 2:['Joe Frames: Gracias por acompañarme a buscar a mi hija. Llevo investigando estas mazmorras desde hace ya un par de días. Todo lo que sé es que alguien del pueblo la vio dirigiéndose a esta cárcel en la noche. Como si estuviera poseída. Todo lo que he podido encontrar son estas huellas.', 'Suspira…'],
 5:['Joe Frames: Acabo de encontrar su zapato, acá abandonado. Ella es lo único que me queda, si algo le pasara no me lo perdonaría jamás.', 'Le tiemblan los brazos, Respira…',' Joe Frames: Contar con tu apoyo me calma, viejo amigo. Sigamos adelante!!!!'], 
 7:['Joe Frames: Estas mazmorras parecen no tener fin, mientras más descendemos más monstruos aparecen. Es como si nos estuviésemos acercando a su nido, si es que eso tiene algún sentido.', '????: AaaaaaaaaaaH!!!', 'Joe Frames: Esa es mi hija!!!, juro que si alguien le puso un dedo encima, haré que lamente haber nacido.'],
-11:['Joe Frames: ¡Ayúdame amigo!, tiene a mi hija atada, la quiere sacrificar para abrir este portal, ¡tenemos que hacer algo para detenerlo!']}
+11:['Joe Frames: ¡Ayúdame amigo!, mi hija está ahí abajo, la quiere sacrificar para abrir un portal y traer más monstruos, ¡tenemos que hacer algo para detenerlo!']}
 
 var dialog_index = 0
 var finished = false
@@ -17,9 +17,9 @@ func _ready():
 	
 	
 	$RichTextLabel.bbcode_text = ''
-	dialog[globals.final_boss] = ['Joe Frames: Ayudame a acabar con él!! Solo eso puede romper el hechizo que lanzo a mi hija!!']
+	dialog[globals.final_boss] = ['Joe Frames: Ayuda!!! Solo acabar con él puede liberar a mi hija de este embrujamiento!!']
 	if globals.dead_boss:
-		dialog[globals.final_boss] = ['Joe Frames: Gracias por ayudarme viejo amigo, las pitas de cerveza las invito yo']
+		dialog[globals.final_boss] = ['Joe Frames: Gracias por ayudarme viejo amigo, las pitas de cerveza las invito yo. Volvamos a la aldea, pero, ¿por donde?']
 		
 	if globals.final_boss == globals.depth:
 		$Label1.hide()

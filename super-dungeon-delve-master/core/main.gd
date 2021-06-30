@@ -154,6 +154,8 @@ func start_level():
 # Helper to move to next level
 #
 func next_level():
+	$Music.stop()
+	$Musica2.stop()
 	$SfxExit.play(0.0)
 	globals.depth += 1
 	# IMPORTANT! Use call_deferred to prevent "flushing queries" errors/warnings

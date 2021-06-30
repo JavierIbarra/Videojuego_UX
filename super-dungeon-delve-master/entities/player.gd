@@ -16,7 +16,7 @@ export var base_speed = Vector2(100, 100)
 export var light_size = 0.19
 export var light_brightness = 2.4
 export var health = 100
-export var attack_cooldown_time = 0.5
+export var attack_cooldown_time = 0.3
 export var weapon_damage = 10.0
 
 #const SCENE_WEAPON: = preload("res://entities/weapon.tscn")

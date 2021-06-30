@@ -377,7 +377,6 @@ bus = "Reverb"
 pause_mode = 2
 stream = ExtResource( 9 )
 volume_db = -16.049
-autoplay = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.576471, 0.576471, 0.576471, 1 )

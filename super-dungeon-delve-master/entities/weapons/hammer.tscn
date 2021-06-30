@@ -8,7 +8,7 @@ extents = Vector2( 7.49084, 6.92768 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "attack"
-length = 1.5
+length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rotation_degrees")
 tracks/0/interp = 1
@@ -16,14 +16,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
+"times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ -33.0, 33.0 ]
 }
 
 [node name="Weapon" type="KinematicBody2D"]
-rotation = -0.575959
+rotation = 0.575959
 z_index = 5
 collision_layer = 2
 collision_mask = 4
@@ -43,4 +43,5 @@ shape = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
 anims/attack = SubResource( 2 )
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
