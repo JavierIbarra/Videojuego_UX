@@ -21,7 +21,8 @@ func _ready():
 	yield(player, "animation_finished")
 	get_tree().change_scene("res://core/start-menu.tscn")
 
-
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		get_tree().change_scene("res://core/start-menu.tscn")
+
+
