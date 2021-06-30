@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://assets/cinematic/Town/Town.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/player/weapon_red_gem_sword.png" type="Texture" id=2]
@@ -30,9 +30,11 @@
 [ext_resource path="res://assets/cinematic/girl room/sp_girl.png" type="Texture" id=28]
 [ext_resource path="res://assets/cinematic/girl room/window.png" type="Texture" id=29]
 [ext_resource path="res://assets/cinematic/girl room/silhouette.png" type="Texture" id=30]
+[ext_resource path="res://assets/cinematic/girl town/Owl.mp3" type="AudioStream" id=31]
 [ext_resource path="res://assets/cinematic/girl town/shadow.png" type="Texture" id=32]
 [ext_resource path="res://assets/cinematic/girl town/night_town.png" type="Texture" id=33]
 [ext_resource path="res://assets/cinematic/girl room/p_girl.png" type="Texture" id=34]
+[ext_resource path="res://assets/cinematic/girl room/night1.mp3" type="AudioStream" id=35]
 [ext_resource path="res://assets/cinematic/girl room/d_girl.wav" type="AudioStream" id=36]
 [ext_resource path="res://assets/cinematic/girl town/bad_aura.wav" type="AudioStream" id=37]
 [ext_resource path="res://assets/cinematic/girl town/3_days_later.png" type="Texture" id=38]
@@ -1366,6 +1368,7 @@ position = Vector2( -79.5915, -11.5601 )
 texture = ExtResource( 5 )
 
 [node name="Tabern_background-taberner" type="Sprite" parent="Cinematic"]
+visible = false
 position = Vector2( 1217.48, 724.492 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 14 )
@@ -1383,6 +1386,7 @@ texture = ExtResource( 10 )
 offset = Vector2( -18.8973, 5.46535 )
 
 [node name="knight_beer" type="Sprite" parent="Cinematic"]
+visible = false
 position = Vector2( 1052.3, 577.274 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 16 )
@@ -1411,6 +1415,7 @@ scale = Vector2( 7.9388, 8.27391 )
 texture = ExtResource( 27 )
 
 [node name="owl" type="AudioStreamPlayer" parent="Cinematic/girl town"]
+stream = ExtResource( 31 )
 volume_db = -9.568
 
 [node name="aura" type="AudioStreamPlayer" parent="Cinematic/girl town"]
@@ -1425,6 +1430,7 @@ stream = ExtResource( 36 )
 volume_db = -7.405
 
 [node name="night_sound" type="AudioStreamPlayer" parent="Cinematic/girl room"]
+stream = ExtResource( 35 )
 volume_db = -2.391
 
 [node name="room" type="Sprite" parent="Cinematic/girl room"]

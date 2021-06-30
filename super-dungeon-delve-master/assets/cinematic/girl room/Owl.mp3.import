@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Owl.mp3-7203a49c7d84c0dd666c96cefd489f90.mp3str"
+
+[deps]
+
+source_file="res://assets/cinematic/girl room/Owl.mp3"
+dest_files=[ "res://.import/Owl.mp3-7203a49c7d84c0dd666c96cefd489f90.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

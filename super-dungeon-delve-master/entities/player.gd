@@ -91,8 +91,8 @@ func _physics_process(delta: float):
 #
 func _get_direction() -> Vector2:
 	var new_dir: = Vector2(
-		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+		ceil(Input.get_action_strength("move_right")) - ceil(Input.get_action_strength("move_left")),
+		ceil(Input.get_action_strength("move_down")) - ceil(Input.get_action_strength("move_up"))
 	)
 	
 	if new_dir.x != 0 or new_dir.y != 0:

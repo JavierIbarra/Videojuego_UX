@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://core/main.gd" type="Script" id=1]
 [ext_resource path="res://resources/theme.tres" type="Theme" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://assets/sfx/ladders.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/music/Dungeon.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/sfx/ambience_dungeon.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/misc/box.png" type="Texture" id=11]
+[ext_resource path="res://assets/misc/controls.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/fonts/LifeCraft_Font.ttf"
@@ -62,7 +64,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 0.535887, 1.46409 ),
 "update": 0,
-"values": [ 690.0, 720.0 ]
+"values": [ 265.723, 280.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Label0:modulate")
@@ -75,6 +77,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.972549, 0.364706, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("pointer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
 }
 
 [node name="Main" type="Node"]
@@ -156,18 +170,23 @@ script = ExtResource( 5 )
 [node name="Panel" type="Panel" parent="HUD/PausePopup"]
 self_modulate = Color( 0, 0, 0, 0.666667 )
 light_mask = 0
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_left = -1.8877
+margin_top = -3.77551
+margin_right = 1918.11
+margin_bottom = 1076.22
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="HUD/PausePopup"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -220.0
-margin_top = -340.0
-margin_right = 134.0
-margin_bottom = -215.0
+margin_left = -208.674
+margin_top = -385.306
+margin_right = 145.326
+margin_bottom = -260.306
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 150, 50 )
 custom_fonts/font = ExtResource( 3 )
@@ -178,21 +197,125 @@ align = 1
 valign = 1
 
 [node name="Label0" type="Label" parent="HUD/PausePopup"]
+modulate = Color( 0.997298, 0.937474, 0.90158, 1 )
 light_mask = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -174.502
-margin_top = -545.0
-margin_right = 134.502
-margin_bottom = -480.0
+margin_left = -637.0
+margin_top = -611.071
+margin_right = -106.0
+margin_bottom = -486.071
 rect_scale = Vector2( 0.8, 0.8 )
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
 text = "Resume Game"
 valign = 1
 max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelControls" type="Label" parent="HUD/PausePopup"]
+light_mask = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 316.398
+margin_top = -719.112
+margin_right = 714.398
+margin_bottom = -594.112
+rect_scale = Vector2( 0.626, 0.515 )
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+text = "Controls"
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelMovement" type="Label" parent="HUD/PausePopup"]
+light_mask = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 157.827
+margin_top = -556.766
+margin_right = 555.827
+margin_bottom = -431.766
+rect_scale = Vector2( 0.525, 0.407 )
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+text = "movement"
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelAttack" type="Label" parent="HUD/PausePopup"]
+light_mask = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 59.6644
+margin_top = -464.266
+margin_right = 850.664
+margin_bottom = -339.266
+rect_scale = Vector2( 0.525, 0.407 )
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+text = "Attack / Selection"
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Return" type="Label" parent="HUD/PausePopup"]
+light_mask = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 89.9286
+margin_top = -387.337
+margin_right = 765.929
+margin_bottom = -262.337
+rect_scale = Vector2( 0.525, 0.407 )
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+text = "Return / Pause"
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Return2" type="Label" parent="HUD/PausePopup"]
+light_mask = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 156.0
+margin_top = -319.112
+margin_right = 602.0
+margin_bottom = -194.112
+rect_scale = Vector2( 0.525, 0.407 )
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+text = "Inventory"
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label1" type="Label" parent="HUD/PausePopup"]
 light_mask = 0
@@ -200,10 +323,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -174.502
-margin_top = -385.0
-margin_right = 134.502
-margin_bottom = -260.0
+margin_left = -635.113
+margin_top = -451.071
+margin_right = -326.109
+margin_bottom = -326.071
 rect_scale = Vector2( 0.8, 0.8 )
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
@@ -212,13 +335,23 @@ valign = 1
 max_lines_visible = 1
 
 [node name="pointer" type="Sprite" parent="HUD/PausePopup"]
-position = Vector2( 690, 568 )
+position = Vector2( 268.233, 534.021 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 6 )
 offset = Vector2( 0, -3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/PausePopup"]
 anims/selected = SubResource( 5 )
+
+[node name="controls" type="Sprite" parent="HUD/PausePopup"]
+position = Vector2( 1620.35, 655.177 )
+scale = Vector2( 3.37935, 3.37935 )
+texture = ExtResource( 12 )
+
+[node name="box" type="Sprite" parent="HUD/PausePopup"]
+position = Vector2( 1365.55, 673.975 )
+scale = Vector2( 7.72122, 6.0824 )
+texture = ExtResource( 11 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )

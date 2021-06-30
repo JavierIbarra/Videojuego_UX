@@ -69,7 +69,9 @@ func start_level():
 
 	# Place exit in randomly selected start room
 	var exit = SCENE_EXIT.instance()
+	TRANSITION.change_change_level()
 	var exit_room 
+	
 	# Place exit in any random room which is not the player start room
 	while true:
 		exit_room = globals.map.all_rooms[randi() % len(globals.map.all_rooms)]
