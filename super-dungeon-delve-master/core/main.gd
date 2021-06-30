@@ -82,7 +82,7 @@ func start_level():
 	add_child(exit)
 	
 	# Ultimo nivel Jefe Final
-	if globals.depth == 1:
+	if globals.depth == globals.final_boss:
 		var monster: KinematicBody2D
 		monster = SCENE_MONSTER.instance()
 		monster.set_script(preload("res://entities/monster-boss.gd"))
@@ -102,45 +102,46 @@ func start_level():
 		add_child(innkeeper)
 	
 	# Add monsters to each room (should this be move to map.gd I don't know)
-	for room in globals.map.all_rooms:
-		# Spawn loop is factored on room size
-		for mi in range(room.width * room.height):
-			# Monster spawn rate factored on depth
-			if (randf() * 100) <= 0.5 + (globals.depth * 0.7):
-				var monster: KinematicBody2D
-				
-				# Randomly pick a monster, note we instance the same scene for all monsters
-				# But attach different scripts for the different behaviors 
-				var r: = randi() % 3
-				if r == 0:
-					monster = SCENE_MONSTER.instance()
-					monster.set_script(preload("res://entities/monster-skel.gd"))
-				if r == 1: 
-					monster = SCENE_MONSTER.instance()
-					monster.set_script(preload("res://entities/monster-slime.gd"))
-				if r == 2:
-					monster = SCENE_MONSTER.instance()
-					monster.set_script(preload("res://entities/monster-goblin.gd"))
-				
-				# Place monster randomly in room
-				var m_cell = globals.map.get_random_floor_cell(room["left"], room["top"], room["width"], room["height"])
-				monster.position.x = m_cell.x * globals.GRID_SIZE
-				monster.position.y = m_cell.y * globals.GRID_SIZE
-				
-				# Small chance monster will be a super monster!
-				# Colored red and with more health, speed etc
-				if randf() * 100 <= (3 + globals.depth):
-					monster.get_node("AnimatedSprite").self_modulate = Color(1.0, 0.1, 0.1)
-					monster.factor = 2
-					if globals.depth > 4:
-						monster.factor = 2.5
-					if globals.depth > 8:
-						monster.factor = 3				
-				
-				# Place monster in game (inside Main node)
-				if start_room != room:  
-					add_child(monster)
-				
+	if globals.depth != globals.final_boss:
+		for room in globals.map.all_rooms:
+			# Spawn loop is factored on room size
+			for mi in range(room.width * room.height):
+				# Monster spawn rate factored on depth
+				if (randf() * 100) <= 0.5 + (globals.depth * 0.5):
+					var monster: KinematicBody2D
+					
+					# Randomly pick a monster, note we instance the same scene for all monsters
+					# But attach different scripts for the different behaviors 
+					var r: = randi() % 3
+					if r == 0:
+						monster = SCENE_MONSTER.instance()
+						monster.set_script(preload("res://entities/monster-skel.gd"))
+					if r == 1: 
+						monster = SCENE_MONSTER.instance()
+						monster.set_script(preload("res://entities/monster-slime.gd"))
+					if r == 2:
+						monster = SCENE_MONSTER.instance()
+						monster.set_script(preload("res://entities/monster-goblin.gd"))
+					
+					# Place monster randomly in room
+					var m_cell = globals.map.get_random_floor_cell(room["left"], room["top"], room["width"], room["height"])
+					monster.position.x = m_cell.x * globals.GRID_SIZE
+					monster.position.y = m_cell.y * globals.GRID_SIZE
+					
+					# Small chance monster will be a super monster!
+					# Colored red and with more health, speed etc
+					if randf() * 100 <= (3 + globals.depth):
+						monster.get_node("AnimatedSprite").self_modulate = Color(1.0, 0.1, 0.1)
+						monster.factor = 2
+						if globals.depth > 4:
+							monster.factor = 2.5
+						if globals.depth > 8:
+							monster.factor = 3				
+					
+					# Place monster in game (inside Main node)
+					if start_room != room:  
+						add_child(monster)
+					
 #
 # Helper to move to next level
 #

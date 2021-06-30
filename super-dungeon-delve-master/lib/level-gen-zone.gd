@@ -14,13 +14,21 @@ var depth: int
 var rng: = RandomNumberGenerator.new()
 	
 func _init(l: float, t: float, w: float, h: float, d: int):
-	rng.randomize()
-	left = l
-	top = t
-	width = w
-	height = h
-	depth = d    
-	center = Vector2(floor(width / 2) + left, floor(height / 2) + top)
+	if globals.depth == globals.final_boss:
+		left = 20
+		top = 20
+		width = 20
+		height = 20
+		depth = d
+		center = Vector2(floor(width / 2) + left, floor(height / 2) + top)
+	else:
+		rng.randomize()
+		left = l
+		top = t
+		width = w
+		height = h
+		depth = d    
+		center = Vector2(floor(width / 2) + left, floor(height / 2) + top)
 
 
 func _ready():
@@ -50,29 +58,45 @@ func _ready():
 
 
 func _make_room():
-	var roomWidth = rng.randi_range(floor(width / 2), max(2, width - 2))
-	var roomHeight = rng.randi_range(floor(height / 2), max(2, height - 2))
-	var roomLeft = left + rng.randi_range(1, max(1, width - roomWidth - 1))
-	var roomTop = top + rng.randi_range(1, max(1, height - roomHeight - 1))
-	#print(" New room %s: left:%s, top:%s, width:%s, height:%s" % [depth, roomX, roomY, roomWidth, roomHeight])
-	if roomWidth < 1 or roomWidth < 1:
-		return
-	globals.map.fill_cells_floor(roomLeft, roomTop, roomWidth, roomHeight)
-	globals.map.all_rooms.push_front({"left":roomLeft, "top":roomTop, "width":roomWidth, "height":roomHeight})
+	if globals.depth == globals.final_boss:
+		#var roomWidth = 30
+		#var roomHeight = 30
+		#var roomLeft = 20
+		#var roomTop = 20
+		var roomWidth = width
+		var roomHeight = height
+		var roomLeft = left
+		var roomTop = top
+		#print(" New room %s: left:%s, top:%s, width:%s, height:%s" % [depth, roomX, roomY, roomWidth, roomHeight])
+		if roomWidth < 1 or roomWidth < 1:
+			return
+		globals.map.fill_cells_floor(roomLeft, roomTop, roomWidth, roomHeight)
+		globals.map.all_rooms.push_front({"left":roomLeft, "top":roomTop, "width":roomWidth, "height":roomHeight})
+	else:
+		var roomWidth = rng.randi_range(floor(width / 2), max(2, width - 2))
+		var roomHeight = rng.randi_range(floor(height / 2), max(2, height - 2))
+		var roomLeft = left + rng.randi_range(1, max(1, width - roomWidth - 1))
+		var roomTop = top + rng.randi_range(1, max(1, height - roomHeight - 1))
+		#print(" New room %s: left:%s, top:%s, width:%s, height:%s" % [depth, roomX, roomY, roomWidth, roomHeight])
+		if roomWidth < 1 or roomWidth < 1:
+			return
+		globals.map.fill_cells_floor(roomLeft, roomTop, roomWidth, roomHeight)
+		globals.map.all_rooms.push_front({"left":roomLeft, "top":roomTop, "width":roomWidth, "height":roomHeight})
 
 
 func make_corridor():
 	# Only draw corridor between zones with children (not leaf nodes)
-	if get_child_count() > 0:
-		var a = get_child(0)
-		var b = get_child(1)
-		
-		# Work out direction
-		if a.center.x != b.center.x:
-			globals.map.fill_cells_floor(a.center.x, a.center.y, b.center.x - a.center.x, 1)
-		if a.center.y != b.center.y:
-			globals.map.fill_cells_floor(a.center.x, a.center.y, 1, b.center.y - a.center.y)
+	if globals.depth != globals.final_boss:
+		if get_child_count() > 0:
+			var a = get_child(0)
+			var b = get_child(1)
+			
+			# Work out direction
+			if a.center.x != b.center.x:
+				globals.map.fill_cells_floor(a.center.x, a.center.y, b.center.x - a.center.x, 1)
+			if a.center.y != b.center.y:
+				globals.map.fill_cells_floor(a.center.x, a.center.y, 1, b.center.y - a.center.y)
 
-		# Recurse down child zones
-		a.make_corridor()
-		b.make_corridor()
+			# Recurse down child zones
+			a.make_corridor()
+			b.make_corridor()

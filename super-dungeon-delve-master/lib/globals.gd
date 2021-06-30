@@ -6,6 +6,7 @@ const GRID_SIZE = 16
 
 var gold = 6000
 var depth = 1
+var final_boss = 1
 var kills = 0
 var skin = 0
 var difficulty = 10

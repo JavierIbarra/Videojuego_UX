@@ -3,7 +3,7 @@ extends TileMap
 # Game main map, instanced as a singleton 
 
 const MAP_SIZE = 48        # Size of the map, which is always square
-const MAX_DEPTH = 4        # Recursion depth when generating
+const MAX_DEPTH = 4       # Recursion depth when generating
 
 # TileSet indexes for walls and floors
 const TILE_IDX_UNSET = -1
@@ -40,32 +40,37 @@ func _ready():
 		
 		# Small chance of mega treasure room, wow!
 		if randf() * 100 < (0.0 + globals.depth):
-			treasure_chance = 25.0
+			treasure_chance = 10.0
 			
 		# Spawn loop factored on room size
+		
 		for mi in range(room.width * room.height):
 			# treasure = potions & chests
-			if randf() * 100 <= treasure_chance:
-				var treasure
-				# 50/50 chance of potion or chest
-				if randf() * 100 < 50:
-					treasure = SCENE_CHEST.instance()
-				else:
-					treasure = SCENE_POTION.instance()
-					
-				# Mega treasure room, only has chests!
-				if treasure_chance >= 25.0:
-					treasure = SCENE_CHEST.instance()
-					
-				var t_cell = get_random_floor_cell(room["left"], room["top"], room["width"], room["height"])
-				treasure.position.x = t_cell.x * globals.GRID_SIZE
-				treasure.position.y = t_cell.y * globals.GRID_SIZE
-				add_child(treasure)
-				continue
+			if globals.depth != globals.final_boss:
+				if randf() * 100 <= treasure_chance:
+					var treasure
+					# 50/50 chance of potion or chest
+					if randf() * 100 < 50:
+						treasure = SCENE_CHEST.instance()
+					else:
+						treasure = SCENE_POTION.instance()
+						
+					# Mega treasure room, only has chests!
+					if treasure_chance >= 25.0:
+						treasure = SCENE_CHEST.instance()
+						
+					var t_cell = get_random_floor_cell(room["left"], room["top"], room["width"], room["height"])
+					treasure.position.x = t_cell.x * globals.GRID_SIZE
+					treasure.position.y = t_cell.y * globals.GRID_SIZE
+					add_child(treasure)
+					continue
 				
 			# Random floor decorations, and stuff to make the map more interesting
 			# These have no game effect
-			if randf() * 100 <= 5.0:
+			var prob = 5.0
+			if globals.depth == globals.final_boss:
+				prob =1.0
+			if randf() * 100 <= prob:
 				var deco = Sprite.new()
 				var r: = randi() % 4
 				if r == 0: deco.texture = preload("res://assets/misc/deco/blood.png")
@@ -103,12 +108,13 @@ func fill_cells_floor(left, top, width, height):
 # Rooms are big empty rectangles, this randomly puts 2x2 "holes" in the rooms
 #
 func _add_pillars(room):
-	if room.width * room.height > 15 and room.width > 4 and room.height > 4:
-		var deco_count: = rng.randi_range(3, 8)
-		for p in range(deco_count):
-			var pillarLeft: = rng.randi_range(1, room.width - 3)
-			var pillarTop: = rng.randi_range(1, room.height - 3)
-			fill_cells(room.left + pillarLeft, room.top + pillarTop, 2, 2, TILE_IDX_UNSET, Vector2.ZERO)	
+	if globals.depth != globals.final_boss:
+		if room.width * room.height > 15 and room.width > 4 and room.height > 4:
+			var deco_count: = rng.randi_range(3, 8)
+			for p in range(deco_count):
+				var pillarLeft: = rng.randi_range(1, room.width - 3)
+				var pillarTop: = rng.randi_range(1, room.height - 3)
+				fill_cells(room.left + pillarLeft, room.top + pillarTop, 2, 2, TILE_IDX_UNSET, Vector2.ZERO)	
 
 #
 # OK, wow... 
